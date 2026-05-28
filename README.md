@@ -166,15 +166,6 @@ The workflow builds with `NEXT_PUBLIC_BASE_PATH=/lab-website` and publishes the 
 https://mindlab25.github.io/lab-website/
 ```
 
-### Deploying to Vercel (alternative)
-
-1. Push the repository to GitHub.
-2. Go to [vercel.com](https://vercel.com), sign in with GitHub, and import the repository.
-3. Leave all settings as defaults — Vercel detects Next.js automatically.
-4. Click **Deploy**. Every push to `main` redeploys automatically.
-
-> If deploying to Vercel instead of GitHub Pages, remove `NEXT_PUBLIC_BASE_PATH` from the build environment (or leave it empty) since Vercel serves from the root path.
-
 ---
 
 ## Project Structure
