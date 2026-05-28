@@ -1,8 +1,8 @@
-# MINDLab Website
+# MIND Lab Website
 
-The official website for the **Machine Intelligence and Data** at Boise State University.
+The official website for the **Machine Intelligence and Data (MIND) Lab** at Boise State University.
 
-Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com). Static output — deployable to GitHub Pages or Vercel for free.
+Built with [Next.js 14](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com). Fully static output — deployed automatically to GitHub Pages via GitHub Actions on every push to `main`.
 
 ---
 
@@ -10,7 +10,7 @@ Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.
 
 **All site content lives in one file: `src/data/site.ts`**
 
-Open that file in any text editor. You'll find clearly labelled sections for every part of the site. No coding knowledge is needed — just edit the text between the quotes.
+Open that file in any text editor. You'll find clearly labelled sections for every part of the site. No coding knowledge needed — just edit the text between the quotes.
 
 ### Updating lab info
 
@@ -18,9 +18,12 @@ Edit the `lab` object at the top of `src/data/site.ts`:
 
 ```ts
 export const lab = {
-  name: "MINDLab",
-  email: "mindlab@boisestate.edu",
-  twitter: "https://twitter.com/your-handle",
+  name: "MIND Lab",
+  email: "mindlab20250820@gmail.com",
+  github: "https://github.com/MINDLab25",
+  twitter: "https://twitter.com/mindlab_bsu",
+  linkedin: "",   // add lab LinkedIn URL here
+  joinLink: "https://mail.google.com/mail/?view=cm&to=...",
   // ...
 }
 ```
@@ -48,25 +51,27 @@ Find the `publications` array and add a new object:
 {
   id: "conference-year",
   title: "Full Paper Title",
-  authors: ["Author One", "Author Two", "Aria Chen"],
+  authors: ["Author One", "Author Two"],
   venue: "Conference Full Name (Abbreviation)",
   year: 2025,
   type: "conference",   // conference | journal | workshop | preprint
   abstract: "One paragraph describing the paper.",
   links: {
     pdf: "https://arxiv.org/abs/...",
-    code: "https://github.com/...",    // optional
-    project: "https://...",            // optional
+    code: "https://github.com/...",   // optional
+    project: "https://...",           // optional
   },
   tags: ["Tag One", "Tag Two"],
-  featured: true,       // true = shows on home page (limit to 3)
-  award: "Spotlight",  // optional — e.g. "Oral", "Best Paper Award"
+  featured: true,        // true = shows on home page (limit to 3)
+  award: "Spotlight",   // optional — e.g. "Oral", "Best Paper Award"
 },
 ```
 
+Author names that exactly match a `team[].name` value are automatically **bolded** on the site.
+
 ### Adding or updating a team member
 
-Find the `team` array. To add a new PhD student:
+Find the `team` array:
 
 ```ts
 {
@@ -74,21 +79,22 @@ Find the `team` array. To add a new PhD student:
   name: "First Last",
   role: "phd",          // pi | postdoc | phd | ms | undergrad | alumni
   title: "PhD Student",
-  photo: "firstname-lastname.jpg",  // filename in /public/images/team/  — or "" for initials
+  photo: "firstname-lastname.jpg",  // filename in /public/images/team/ — or "" for initials avatar
   bio: "Two or three sentence bio.",
   interests: ["Topic One", "Topic Two"],
   links: {
     email: "user@boisestate.edu",
+    website: "https://...",
     github: "https://github.com/...",
     twitter: "https://twitter.com/...",
-    website: "https://...",
     googleScholar: "https://scholar.google.com/...",
+    linkedin: "https://linkedin.com/in/...",
   },
   joinYear: 2025,
 },
 ```
 
-For alumni, also add:
+For alumni, also add `gradYear` and `currentPosition`:
 
 ```ts
   gradYear: 2025,
@@ -119,19 +125,21 @@ Find the `resources` array:
 2. Name it `firstname-lastname.jpg` (all lowercase, hyphen-separated).
 3. Drop it into `public/images/team/`.
 4. In `src/data/site.ts`, set the member's `photo` field to the filename:
-  ```ts
+   ```ts
    photo: "firstname-lastname.jpg",
-  ```
+   ```
 
-If `photo` is left as `""`, the site shows a gradient avatar with the person's initials.
+If `photo` is left as `""`, the site shows a gradient avatar with the person's initials instead.
 
 ---
 
 ## Running Locally
 
-**Prerequisites:** Node.js 18+ installed ([nodejs.org](https://nodejs.org))
+**Prerequisites:** Node.js 24 via [nvm](https://github.com/nvm-sh/nvm)
 
 ```bash
+nvm use 24.15.0
+
 # Install dependencies (only needed once)
 npm install
 
@@ -139,76 +147,33 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser. Changes to `src/data/site.ts` appear instantly.
-
----
-
-## Building for Production
+Open [http://localhost:3000](http://localhost:3000). Changes to `src/data/site.ts` appear instantly without restarting.
 
 ```bash
-npm run build
+npm run build   # static export → out/
+npm run lint    # ESLint
 ```
 
-This generates a fully static site in the `out/` folder. You can open any file in `out/` directly in a browser to preview.
-
 ---
 
-## Deploying to Vercel (Recommended)
+## Deployment
 
-Vercel is the easiest option and deploys automatically on every push.
+The site deploys automatically to GitHub Pages on every push to `main` via `.github/workflows/deploy.yml`. No manual steps needed.
 
-1. Push this repository to GitHub.
-2. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-3. Click **Add New Project** and import your repository.
-4. Leave all settings as defaults — Vercel detects Next.js automatically.
-5. Click **Deploy**.
+The workflow builds with `NEXT_PUBLIC_BASE_PATH=/lab-website` and publishes the `out/` folder. The live site is at:
 
-Your site will be live at `https://your-repo-name.vercel.app` within a minute. Every time you push to `main`, it redeploys automatically.
+```
+https://mindlab25.github.io/lab-website/
+```
 
-**Custom domain:** In the Vercel dashboard → your project → Settings → Domains, add your domain and follow the DNS instructions.
+### Deploying to Vercel (alternative)
 
----
+1. Push the repository to GitHub.
+2. Go to [vercel.com](https://vercel.com), sign in with GitHub, and import the repository.
+3. Leave all settings as defaults — Vercel detects Next.js automatically.
+4. Click **Deploy**. Every push to `main` redeploys automatically.
 
-## Deploying to GitHub Pages
-
-1. Open `next.config.ts` and set `basePath` to your repository name:
-  ```ts
-   const nextConfig: NextConfig = {
-     output: 'export',
-     images: { unoptimized: true },
-     trailingSlash: true,
-     basePath: '/your-repo-name',   // add this line
-   }
-  ```
-2. Build the site:
-  ```bash
-   npm run build
-  ```
-3. Deploy the `out/` folder to the `gh-pages` branch. The easiest way is with the `gh-pages` package:
-  ```bash
-   npm install --save-dev gh-pages
-   npx gh-pages -d out
-  ```
-4. In your GitHub repository → Settings → Pages → Source, select the `gh-pages` branch.
-
-Your site will be available at `https://your-username.github.io/your-repo-name`.
-
-> **Tip:** If you use a custom domain with GitHub Pages, remove the `basePath` line from `next.config.ts`.
-
----
-
-## Logo Files
-
-All logos are in `public/images/`:
-
-
-| File                         | Use                                               |
-| ---------------------------- | ------------------------------------------------- |
-| `MIND Lab Main Logo (2).png` | Horizontal (icon + text), color — used in the nav |
-| `MIND Lab Main Logo (3).png` | Vertical (icon above text), color                 |
-| `MIND Lab Black Logo.png`    | Horizontal, dark/grayscale — used in the footer   |
-| `MIND Lab Logo Symbol.png`   | Icon only, color — used as a favicon / accent     |
-
+> If deploying to Vercel instead of GitHub Pages, remove `NEXT_PUBLIC_BASE_PATH` from the build environment (or leave it empty) since Vercel serves from the root path.
 
 ---
 
@@ -217,19 +182,37 @@ All logos are in `public/images/`:
 ```
 src/
   data/
-    site.ts          ← ALL content lives here
+    site.ts                   ← ALL content lives here
+  lib/
+    utils.ts                  ← Shared helpers (formatDate, getInitials, labMemberNames)
+    constants.ts              ← Shared badge/label maps for news and publication types
   app/
-    layout.tsx       ← Root layout (nav + footer)
-    page.tsx         ← Home page
-    news/page.tsx
-    team/page.tsx
-    publications/page.tsx
-    resources/page.tsx
-    globals.css      ← Global styles & design tokens
+    layout.tsx                ← Root layout (Nav wrapper)
+    page.tsx                  ← Home page (composes section components)
+    globals.css               ← Global styles & Tailwind design tokens
+    news/page.tsx             ← Full news page with filters
+    team/page.tsx             ← Full team page by role
+    publications/page.tsx     ← Full publications page with filters
+    resources/page.tsx        ← Resources page
   components/
-    Nav.tsx
-    Footer.tsx
+    Nav.tsx                   ← Sticky nav with scroll-tracking & mobile menu
+    Footer.tsx                ← Site footer
+    Avatar.tsx                ← Gradient initials avatar (with optional photo)
+    SocialLinks.tsx           ← Social icon links (email, website, GitHub, etc.)
+    SectionHeading.tsx        ← Shared section heading style
+    sections/
+      HeroSection.tsx
+      NewsSection.tsx
+      ResearchSection.tsx
+      PublicationsSection.tsx
+      TeamSection.tsx
+      JoinSection.tsx
+      JoinModal.tsx           ← "Get in Touch" modal with social links
 public/
-  images/            ← Logos and team photos
+  images/
+    mindlab-logo-horizontal.png   ← Used in Nav
+    mindlab-logo-symbol.png       ← Icon only, used in Join section & modal
+    mindlab-logo-black.png        ← Dark version, used in Footer
+    mindlab-logo-vertical.png     ← Vertical layout variant
+    team/                         ← Team member photos go here
 ```
-
