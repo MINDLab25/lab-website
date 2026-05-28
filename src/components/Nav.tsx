@@ -60,11 +60,13 @@ export default function Nav() {
           {links.map(({ href, label }) => {
             const id = href.replace('#', '')
             const isActive = activeSection === id
+            const isJoin = id === 'join'
             return (
               <a
                 key={href}
-                href={href}
-                className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                href={isJoin ? undefined : href}
+                onClick={isJoin ? (e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-join-modal')) } : undefined}
+                className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-colors cursor-pointer ${
                   isActive
                     ? 'text-ink'
                     : 'text-ink-muted hover:text-ink hover:bg-surface-subtle'
@@ -103,12 +105,16 @@ export default function Nav() {
           {links.map(({ href, label }) => {
             const id = href.replace('#', '')
             const isActive = activeSection === id
+            const isJoin = id === 'join'
             return (
               <a
                 key={href}
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className={`flex items-center gap-2 px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                href={isJoin ? undefined : href}
+                onClick={isJoin
+                  ? (e) => { e.preventDefault(); setMenuOpen(false); window.dispatchEvent(new CustomEvent('open-join-modal')) }
+                  : () => setMenuOpen(false)
+                }
+                className={`flex items-center gap-2 px-3 py-2.5 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                   isActive
                     ? 'text-ink bg-surface-subtle'
                     : 'text-ink-muted hover:text-ink hover:bg-surface-subtle'

@@ -3,24 +3,11 @@
 import { useState } from 'react'
 import { news } from '@/data/site'
 import type { NewsType } from '@/data/site'
+import { formatDate } from '@/lib/utils'
+import { newsTypeBadge, newsTypeLabel } from '@/lib/constants'
 
-const typeBadge: Record<string, string> = {
-  paper: 'badge-paper',
-  award: 'badge-award',
-  grant: 'badge-grant',
-  event: 'badge-event',
-  misc: 'badge-misc',
-  press: 'badge-press',
-}
-
-const typeLabel: Record<string, string> = {
-  paper: 'Paper',
-  award: 'Award',
-  grant: 'Grant',
-  event: 'Event',
-  misc: 'News',
-  press: 'Press',
-}
+const typeBadge = newsTypeBadge
+const typeLabel = newsTypeLabel
 
 const filterOptions: { value: NewsType | 'all'; label: string }[] = [
   { value: 'all', label: 'All' },
@@ -30,14 +17,6 @@ const filterOptions: { value: NewsType | 'all'; label: string }[] = [
   { value: 'event', label: 'Events' },
   { value: 'misc', label: 'News' },
 ]
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  })
-}
 
 export default function NewsPage() {
   const [filter, setFilter] = useState<NewsType | 'all'>('all')
@@ -113,7 +92,7 @@ export default function NewsPage() {
                           {typeLabel[item.type]}
                         </span>
                         <time className="text-xs text-ink-faint">
-                          {formatDate(item.date)}
+                          {formatDate(item.date, 'long')}
                         </time>
                       </div>
 

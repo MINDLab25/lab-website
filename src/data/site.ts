@@ -16,15 +16,17 @@ export const lab = {
   tagline: "Trustworthy AI Systems for the Real World",
   description:
     "We develop machine learning and data science methods that are trustworthy, personalized, and socially intelligent — with applications in healthcare, education, and fact-checking. Our research spans generative AI, multimodal learning, and LLM agents.",
-  email: "xinyizhou@boisestate.edu",
+  email: "mindlab20250820@gmail.com",
   phone: "(208) 426-5766",
   address: "1910 University Dr, Boise, ID 83725",
   room: "City Center Plaza (CCP), Room 255",
-  github: "https://github.com/mindlab-bsu",
+  github: "https://github.com/MINDLab25",
   twitter: "https://twitter.com/mindlab_bsu",
-  googleScholar: "https://scholar.google.com/citations?user=9U_Ge4MAAAAJ",
-  joinLink: "mailto:xinyizhou@boisestate.edu?subject=Prospective%20Student%20Inquiry",
-}
+  linkedin: "",  // TODO: add lab LinkedIn URL
+  googleScholar: "",
+  joinLink:
+    "https://mail.google.com/mail/?view=cm&to=mindlab20250820@gmail.com&su=Prospective%20Student%20Inquiry",
+};
 
 // ──────────────────────────────────────────────────────────
 //  HOME PAGE
@@ -32,14 +34,18 @@ export const lab = {
 export const home = {
   stats: [
     { value: "30+", label: "Publications" },
-    { value: "—", label: "Lab Members" },   // TODO: fill in
+    { value: "—", label: "Lab Members" }, // TODO: fill in
     { value: "20", label: "h-index" },
     { value: "3", label: "Years at BSU" },
   ],
   // IDs referencing items in the publications and news arrays below
-  featuredPublicationIds: ["social-rag-chi-2025", "correcting-misinfo-2024", "fake-news-survey-csur-2020"],
+  featuredPublicationIds: [
+    "social-rag-chi-2025",
+    "correcting-misinfo-2024",
+    "fake-news-survey-csur-2020",
+  ],
   featuredNewsIds: ["rising-star-mit-2024", "rising-star-ds-2024", "wsdm-2026"],
-}
+};
 
 // ──────────────────────────────────────────────────────────
 //  RESEARCH AREAS
@@ -85,38 +91,38 @@ export const researchAreas = [
     icon: "🏥",
     memberIds: ["xinyi-zhou"],
   },
-]
+];
 
 // ──────────────────────────────────────────────────────────
 //  TEAM
 // ──────────────────────────────────────────────────────────
 
-export type TeamRole = "pi" | "postdoc" | "phd" | "ms" | "undergrad" | "alumni"
+export type TeamRole = "pi" | "postdoc" | "phd" | "ms" | "undergrad" | "alumni";
 
 export interface TeamMember {
-  id: string
-  name: string
-  role: TeamRole
+  id: string;
+  name: string;
+  role: TeamRole;
   /** Displayed title (e.g. "Assistant Professor", "PhD Student") */
-  title: string
+  title: string;
   /** Filename inside /public/images/team/ — leave "" to show initials avatar */
-  photo: string
-  bio: string
-  interests: string[]
+  photo: string;
+  bio: string;
+  interests: string[];
   links: {
-    email?: string
-    website?: string
-    github?: string
-    twitter?: string
-    googleScholar?: string
-    linkedin?: string
-  }
+    email?: string;
+    website?: string;
+    github?: string;
+    twitter?: string;
+    googleScholar?: string;
+    linkedin?: string;
+  };
   /** Year they joined the lab */
-  joinYear?: number
+  joinYear?: number;
   /** Alumni only: year they graduated */
-  gradYear?: number
+  gradYear?: number;
   /** Alumni only: where they are now */
-  currentPosition?: string
+  currentPosition?: string;
 }
 
 export const team: TeamMember[] = [
@@ -140,7 +146,7 @@ export const team: TeamMember[] = [
       website: "https://xinyizhou.xyz",
       googleScholar: "https://scholar.google.com/citations?user=9U_Ge4MAAAAJ",
     },
-    joinYear: 2023,
+    joinYear: 2025,
   },
 
   // ── PhD Students ────────────────────────────────────────
@@ -195,43 +201,51 @@ export const team: TeamMember[] = [
     links: {},
     joinYear: undefined,
   },
-]
+];
 
 // ──────────────────────────────────────────────────────────
 //  PUBLICATIONS
 // ──────────────────────────────────────────────────────────
 
-export type PubType = "conference" | "journal" | "workshop" | "preprint"
+export type PubType = "conference" | "journal" | "workshop" | "preprint";
 
 export interface Publication {
-  id: string
-  title: string
+  id: string;
+  title: string;
   /** List authors by full name; lab members will be auto-bolded if names match */
-  authors: string[]
-  venue: string
-  year: number
-  type: PubType
-  abstract: string
+  authors: string[];
+  venue: string;
+  year: number;
+  type: PubType;
+  abstract: string;
   links: {
-    pdf?: string
-    code?: string
-    project?: string
-    slides?: string
-    demo?: string
-  }
-  tags: string[]
+    pdf?: string;
+    code?: string;
+    project?: string;
+    slides?: string;
+    demo?: string;
+  };
+  tags: string[];
   /** Show on home page */
-  featured: boolean
+  featured: boolean;
   /** e.g. "Oral", "Spotlight", "Best Paper Award" */
-  award?: string
+  award?: string;
 }
 
 export const publications: Publication[] = [
   // ── 2025 ────────────────────────────────────────────────
   {
     id: "social-rag-chi-2025",
-    title: "Social-RAG: Retrieving from Group Interactions to Socially Ground AI Generation",
-    authors: ["Ruotong Wang", "Xinyi Zhou", "Lin Qiu", "Joseph Chee Chang", "Jonathan Bragg", "Amy X. Zhang"],
+    title:
+      "Social-RAG: Retrieving from Group Interactions to Socially Ground AI Generation",
+    authors: [
+      "Ruotong Wang",
+      "Xinyi Zhou",
+      "Lin Qiu",
+      "Joseph Chee Chang",
+      "Jonathan Bragg",
+      "Amy X. Zhang",
+    ],
     venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI)",
     year: 2025,
     type: "conference",
@@ -246,9 +260,11 @@ export const publications: Publication[] = [
   },
   {
     id: "paperping-cscw-2025",
-    title: "PaperPing: A Socially-aware AI Agent that Recommends Academic Papers to Research Group Chats with Contextualized Explanations",
+    title:
+      "PaperPing: A Socially-aware AI Agent that Recommends Academic Papers to Research Group Chats with Contextualized Explanations",
     authors: ["Xinyi Zhou"],
-    venue: "Companion Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW Companion)",
+    venue:
+      "Companion Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW Companion)",
     year: 2025,
     type: "workshop",
     abstract: "[Abstract coming soon.]",
@@ -260,7 +276,8 @@ export const publications: Publication[] = [
   // ── 2024 ────────────────────────────────────────────────
   {
     id: "correcting-misinfo-2024",
-    title: "Correcting Misinformation on Social Media with a Large Language Model",
+    title:
+      "Correcting Misinformation on Social Media with a Large Language Model",
     authors: ["Xinyi Zhou", "Ashish Sharma", "Amy X. Zhang", "Tim Althoff"],
     venue: "arXiv preprint",
     year: 2024,
@@ -275,7 +292,8 @@ export const publications: Publication[] = [
   },
   {
     id: "fact-checking-cscw-2024",
-    title: "Human-centered NLP Fact-checking: Co-Designing with Fact-checkers using Matchmaking for AI",
+    title:
+      "Human-centered NLP Fact-checking: Co-Designing with Fact-checkers using Matchmaking for AI",
     authors: ["Xinyi Zhou"],
     venue: "Proceedings of the ACM on Human-Computer Interaction (CSCW)",
     year: 2024,
@@ -291,8 +309,15 @@ export const publications: Publication[] = [
   // ── 2022 ────────────────────────────────────────────────
   {
     id: "fake-intent-www-2022",
-    title: "'This is Fake! Shared it by Mistake': Assessing the Intent of Fake News Spreaders",
-    authors: ["Xinyi Zhou", "Kai Shu", "Vir V. Phoha", "Huan Liu", "Reza Zafarani"],
+    title:
+      "'This is Fake! Shared it by Mistake': Assessing the Intent of Fake News Spreaders",
+    authors: [
+      "Xinyi Zhou",
+      "Kai Shu",
+      "Vir V. Phoha",
+      "Huan Liu",
+      "Reza Zafarani",
+    ],
     venue: "The Web Conference (WWW)",
     year: 2022,
     type: "conference",
@@ -305,7 +330,8 @@ export const publications: Publication[] = [
   // ── 2020 ────────────────────────────────────────────────
   {
     id: "fake-news-survey-csur-2020",
-    title: "A Survey of Fake News: Fundamental Theories, Detection Methods, and Opportunities",
+    title:
+      "A Survey of Fake News: Fundamental Theories, Detection Methods, and Opportunities",
     authors: ["Xinyi Zhou", "Reza Zafarani"],
     venue: "ACM Computing Surveys (CSUR)",
     year: 2020,
@@ -320,7 +346,8 @@ export const publications: Publication[] = [
     id: "safe-pakdd-2020",
     title: "SAFE: Similarity-Aware Multi-Modal Fake News Detection",
     authors: ["Xinyi Zhou", "Jindi Wu", "Reza Zafarani"],
-    venue: "Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)",
+    venue:
+      "Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)",
     year: 2020,
     type: "conference",
     abstract: "[Abstract coming soon.]",
@@ -330,9 +357,11 @@ export const publications: Publication[] = [
   },
   {
     id: "recovery-cikm-2020",
-    title: "ReCOVery: A Multimodal Repository for COVID-19 News Credibility Research",
+    title:
+      "ReCOVery: A Multimodal Repository for COVID-19 News Credibility Research",
     authors: ["Xinyi Zhou", "Apurva Mulay", "Emilio Ferrara", "Reza Zafarani"],
-    venue: "ACM International Conference on Information and Knowledge Management (CIKM)",
+    venue:
+      "ACM International Conference on Information and Knowledge Management (CIKM)",
     year: 2020,
     type: "conference",
     abstract: "[Abstract coming soon.]",
@@ -340,23 +369,23 @@ export const publications: Publication[] = [
     tags: ["Dataset", "COVID-19", "Misinformation", "Multimodal ML"],
     featured: false,
   },
-]
+];
 
 // ──────────────────────────────────────────────────────────
 //  NEWS
 // ──────────────────────────────────────────────────────────
 
-export type NewsType = "paper" | "award" | "grant" | "event" | "press" | "misc"
+export type NewsType = "paper" | "award" | "grant" | "event" | "press" | "misc";
 
 export interface NewsItem {
-  id: string
+  id: string;
   /** ISO date string: "2024-12-01" */
-  date: string
-  type: NewsType
-  title: string
-  description: string
+  date: string;
+  type: NewsType;
+  title: string;
+  description: string;
   /** Optional URL for a "Read more" link */
-  link?: string
+  link?: string;
 }
 
 export const news: NewsItem[] = [
@@ -394,32 +423,39 @@ export const news: NewsItem[] = [
     date: "2024-01-01",
     type: "paper",
     title: "[Paper Acceptance — Placeholder]",
-    description: "[News description coming soon. Replace this with a real paper acceptance, award, or lab update.]",
+    description:
+      "[News description coming soon. Replace this with a real paper acceptance, award, or lab update.]",
   },
   {
     id: "news-placeholder-2",
     date: "2024-01-01",
     type: "misc",
     title: "[Lab Update — Placeholder]",
-    description: "[News description coming soon. Replace this with a real lab update, welcome post, or event announcement.]",
+    description:
+      "[News description coming soon. Replace this with a real lab update, welcome post, or event announcement.]",
   },
-]
+];
 
 // ──────────────────────────────────────────────────────────
 //  RESOURCES
 // ──────────────────────────────────────────────────────────
 
-export type ResourceCategory = "dataset" | "code" | "reading-list" | "tutorial" | "tool"
+export type ResourceCategory =
+  | "dataset"
+  | "code"
+  | "reading-list"
+  | "tutorial"
+  | "tool";
 
 export interface Resource {
-  id: string
-  category: ResourceCategory
-  title: string
-  description: string
-  url: string
-  tags: string[]
+  id: string;
+  category: ResourceCategory;
+  title: string;
+  description: string;
+  url: string;
+  tags: string[];
   /** Optional: link to the related paper */
-  paperUrl?: string
+  paperUrl?: string;
 }
 
 // TODO: replace with real resources
@@ -428,7 +464,8 @@ export const resources: Resource[] = [
     id: "resource-placeholder-1",
     category: "code",
     title: "[Code Repository — Placeholder]",
-    description: "[Description coming soon. Replace this with a real code release, dataset, or reading list from the lab.]",
+    description:
+      "[Description coming soon. Replace this with a real code release, dataset, or reading list from the lab.]",
     url: "https://github.com/mindlab-bsu",
     tags: ["[Tag]"],
   },
@@ -436,8 +473,9 @@ export const resources: Resource[] = [
     id: "resource-placeholder-2",
     category: "reading-list",
     title: "[Reading List — Placeholder]",
-    description: "[Description coming soon. Replace this with a real reading list or tutorial resource from the lab.]",
+    description:
+      "[Description coming soon. Replace this with a real reading list or tutorial resource from the lab.]",
     url: "https://github.com/mindlab-bsu",
     tags: ["[Tag]"],
   },
-]
+];

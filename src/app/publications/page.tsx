@@ -1,10 +1,12 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { publications, team } from '@/data/site'
+import { publications } from '@/data/site'
+import { labMemberNames } from '@/lib/utils'
+import { pubTypeBadgeClass, pubTypeLabel } from '@/lib/constants'
 
-// Build a set of lab member names for bolding
-const labMemberNames = new Set(team.map((m) => m.name))
+const typeLabel = pubTypeLabel
+const typeBadgeClass = pubTypeBadgeClass
 
 function AuthorList({ authors }: { authors: string[] }) {
   return (
@@ -23,29 +25,10 @@ function AuthorList({ authors }: { authors: string[] }) {
   )
 }
 
-const typeLabel: Record<string, string> = {
-  conference: 'Conference',
-  journal: 'Journal',
-  workshop: 'Workshop',
-  preprint: 'Preprint',
-}
-
-const typeBadgeClass: Record<string, string> = {
-  conference: 'bg-blue-50 text-blue-700 ring-1 ring-blue-200',
-  journal: 'bg-green-50 text-green-700 ring-1 ring-green-200',
-  workshop: 'bg-amber-50 text-amber-700 ring-1 ring-amber-200',
-  preprint: 'bg-gray-100 text-gray-600 ring-1 ring-gray-200',
-}
-
 export default function PublicationsPage() {
   const years = useMemo(
     () =>
       [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a),
-    []
-  )
-
-  const allTags = useMemo(
-    () => [...new Set(publications.flatMap((p) => p.tags))].sort(),
     []
   )
 
