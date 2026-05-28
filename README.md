@@ -1,6 +1,6 @@
 # MINDLab Website
 
-The official website for the Machine Intelligence & Neural Dynamics Laboratory at Boise State University.
+The official website for the **Machine Intelligence and Data** at Boise State University.
 
 Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com). Static output — deployable to GitHub Pages or Vercel for free.
 
@@ -89,6 +89,7 @@ Find the `team` array. To add a new PhD student:
 ```
 
 For alumni, also add:
+
 ```ts
   gradYear: 2025,
   currentPosition: "Research Scientist, OpenAI",
@@ -118,9 +119,9 @@ Find the `resources` array:
 2. Name it `firstname-lastname.jpg` (all lowercase, hyphen-separated).
 3. Drop it into `public/images/team/`.
 4. In `src/data/site.ts`, set the member's `photo` field to the filename:
-   ```ts
+  ```ts
    photo: "firstname-lastname.jpg",
-   ```
+  ```
 
 If `photo` is left as `""`, the site shows a gradient avatar with the person's initials.
 
@@ -171,28 +172,23 @@ Your site will be live at `https://your-repo-name.vercel.app` within a minute. E
 ## Deploying to GitHub Pages
 
 1. Open `next.config.ts` and set `basePath` to your repository name:
-
-   ```ts
+  ```ts
    const nextConfig: NextConfig = {
      output: 'export',
      images: { unoptimized: true },
      trailingSlash: true,
      basePath: '/your-repo-name',   // add this line
    }
-   ```
-
+  ```
 2. Build the site:
-   ```bash
+  ```bash
    npm run build
-   ```
-
+  ```
 3. Deploy the `out/` folder to the `gh-pages` branch. The easiest way is with the `gh-pages` package:
-
-   ```bash
+  ```bash
    npm install --save-dev gh-pages
    npx gh-pages -d out
-   ```
-
+  ```
 4. In your GitHub repository → Settings → Pages → Source, select the `gh-pages` branch.
 
 Your site will be available at `https://your-username.github.io/your-repo-name`.
@@ -205,12 +201,14 @@ Your site will be available at `https://your-username.github.io/your-repo-name`.
 
 All logos are in `public/images/`:
 
-| File | Use |
-|------|-----|
+
+| File                         | Use                                               |
+| ---------------------------- | ------------------------------------------------- |
 | `MIND Lab Main Logo (2).png` | Horizontal (icon + text), color — used in the nav |
-| `MIND Lab Main Logo (3).png` | Vertical (icon above text), color |
-| `MIND Lab Black Logo.png` | Horizontal, dark/grayscale — used in the footer |
-| `MIND Lab Logo Symbol.png` | Icon only, color — used as a favicon / accent |
+| `MIND Lab Main Logo (3).png` | Vertical (icon above text), color                 |
+| `MIND Lab Black Logo.png`    | Horizontal, dark/grayscale — used in the footer   |
+| `MIND Lab Logo Symbol.png`   | Icon only, color — used as a favicon / accent     |
+
 
 ---
 
@@ -234,3 +232,4 @@ src/
 public/
   images/            ← Logos and team photos
 ```
+
