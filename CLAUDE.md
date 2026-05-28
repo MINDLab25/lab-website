@@ -19,14 +19,25 @@ There are no tests. The build output is a fully static site in `out/` (Next.js `
 
 **Single data file:** All site content lives in `src/data/site.ts`. Every exported constant (`lab`, `home`, `team`, `publications`, `news`, `researchAreas`, `resources`) is consumed directly by page components. To add or update content, only edit this file.
 
-**Single-page layout:** The site is a single scrollable page (`src/app/page.tsx`) with anchor-linked sections (`#home`, `#news`, `#research`, `#publications`, `#team`, `#join`). There are no separate route pages beyond the root.
+**Component structure:** The home page (`src/app/page.tsx`) is a thin coordinator (~30 lines) that owns modal/expand state and composes section components from `src/components/sections/`. Each section reads data from `site.ts` directly — no prop drilling of data. The four route pages (`/news`, `/team`, `/publications`, `/resources`) are standalone under `src/app/`.
 
-**Static export + GitHub Pages:** `next.config.mjs` sets `output: 'export'` with `trailingSlash: true`. The `basePath` and `assetPrefix` are driven by the `NEXT_PUBLIC_BASE_PATH` env var (set to `/lab-website` for GitHub Pages). All image references in JSX must use `${basePath}/images/...` — Next.js `<Image>` is not used because images are unoptimized.
+**Shared utilities:**
+- `src/lib/utils.ts` — `getInitials`, `getDisplayFirstName`, `formatDate(iso, 'short'|'long')`, `labMemberNames` Set
+- `src/lib/constants.ts` — `newsTypeBadge`, `newsTypeLabel`, `pubTypeBadgeClass`, `pubTypeLabel`
+- `src/components/Avatar.tsx` — gradient initials avatar with optional photo support (`<img>`, not `next/image`)
+- `src/components/SocialLinks.tsx` — all 6 link types (email, website, github, twitter, googleScholar, linkedin)
+- `src/components/SectionHeading.tsx` — shared `<h2>` style
+
+**Static export + GitHub Pages:** `next.config.mjs` sets `output: 'export'` with `trailingSlash: true`. The `basePath` and `assetPrefix` are driven by the `NEXT_PUBLIC_BASE_PATH` env var (set to `/lab-website` in `.github/workflows/deploy.yml`). All image `src` attributes must use `${basePath}/images/...` — never use Next.js `<Image>` as images are unoptimized.
+
+**Join modal:** Triggered from three places — Nav "Join Us" (dispatches `open-join-modal` custom event), Hero inline link, and the Join section button. The custom event is listened to in `page.tsx`. Modal logic lives in `src/components/sections/JoinModal.tsx` (`'use client'`, owns Escape-key effect). The email icon links to `lab.joinLink`, which is a Gmail compose URL (not `mailto:`) for reliable cross-browser behavior.
 
 **Design tokens:** Custom colors and typography are defined in `tailwind.config.ts` under `brand.*`, `ink.*`, and `surface.*`. Reusable utility classes (`.badge`, `.badge-*`, `.container-content`, `.gradient-text`) are defined in `src/app/globals.css` under `@layer utilities`.
 
-**Cross-linking via IDs:** `researchAreas[].memberIds` references `team[].id`. `home.featuredPublicationIds` and `home.featuredNewsIds` reference IDs in `publications` and `news`. Broken IDs fail silently (items are filtered out with `.filter(Boolean)`).
+**Cross-linking via IDs:** `researchAreas[].memberIds` references `team[].id`. `home.featuredPublicationIds` and `home.featuredNewsIds` reference IDs in `publications` and `news`. Broken IDs fail silently (filtered out with `.filter(Boolean)`).
 
 **Team photos:** Place square images (≥ 400×400 px) in `public/images/team/` named `firstname-lastname.jpg`. Set the member's `photo` field in `site.ts`. An empty string `""` renders a gradient initials avatar instead.
 
-**Lab member bolding:** Author names in publications are bolded automatically if the name exactly matches a `team[].name` value (`labMemberNames` Set in `page.tsx:34`).
+**Lab member bolding:** Author names in publications are bolded automatically if the name exactly matches a `team[].name` value (`labMemberNames` in `src/lib/utils.ts`).
+
+**`'use client'` boundary:** Only `src/app/page.tsx` and `src/components/sections/JoinModal.tsx` need `'use client'`. All other section and shared components are pure render — do not add `'use client'` to them unless they require local state or browser APIs.
