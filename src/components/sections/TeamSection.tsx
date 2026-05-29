@@ -2,6 +2,7 @@ import { team } from '@/data/site'
 import SectionHeading from '@/components/SectionHeading'
 import Avatar from '@/components/Avatar'
 import SocialLinks from '@/components/SocialLinks'
+import BioExpand from '@/components/BioExpand'
 
 const currentMembers = team.filter((m) => m.role !== 'alumni')
 const pi = currentMembers.find((m) => m.role === 'pi')!
@@ -44,22 +45,17 @@ export default function TeamSection() {
             <div
               key={member.id}
               id={`member-${member.id}`}
-              className="p-5 rounded-xl border border-surface-border hover:border-surface-border-strong hover:shadow-sm transition-all"
+              className="p-5 rounded-xl border border-surface-border hover:border-surface-border-strong hover:shadow-sm transition-all flex flex-col"
             >
               <div className="flex items-start gap-3 mb-3">
                 <Avatar name={member.name} photo={member.photo || undefined} size="md" />
                 <div className="min-w-0 flex-1">
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <h3 className="font-semibold text-ink text-sm leading-tight">{member.name}</h3>
-                      <p className="text-xs text-ink-muted mt-0.5">{member.title}</p>
-                    </div>
-                    <SocialLinks links={member.links} />
-                  </div>
+                  <h3 className="font-semibold text-ink text-sm leading-tight">{member.name}</h3>
+                  <p className="text-xs text-ink-muted mt-0.5">{member.title}</p>
                 </div>
               </div>
-              <p className="text-xs text-ink-secondary leading-relaxed mb-3">{member.bio}</p>
-              <div className="flex flex-wrap gap-1">
+              <BioExpand bio={member.bio} className="mb-3" />
+              <div className="flex flex-wrap gap-1 mt-auto">
                 {member.interests.map((interest) => (
                   <span
                     key={interest}
@@ -68,6 +64,9 @@ export default function TeamSection() {
                     {interest}
                   </span>
                 ))}
+              </div>
+              <div className="flex justify-end mt-3">
+                <SocialLinks links={member.links} />
               </div>
             </div>
           ))}

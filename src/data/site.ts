@@ -21,8 +21,8 @@ export const lab = {
   address: "1910 University Dr, Boise, ID 83725",
   room: "City Center Plaza (CCP), Room 255",
   github: "https://github.com/MINDLab25",
-  twitter: "https://twitter.com/mindlab_bsu",
-  linkedin: "",  // TODO: add lab LinkedIn URL
+  twitter: "https://twitter.com/",
+  linkedin: "https://www.linkedin.com", // TODO: add lab LinkedIn URL
   googleScholar: "",
   joinLink:
     "https://mail.google.com/mail/?view=cm&to=mindlab20250820@gmail.com&su=Prospective%20Student%20Inquiry",
@@ -152,26 +152,22 @@ export const team: TeamMember[] = [
   // ── PhD Students ────────────────────────────────────────
   // TODO: replace with real lab members
   {
-    id: "phd-student-placeholder-1",
-    name: "PhD Student (Coming Soon)",
+    id: "benjamin-lee-peterson",
+    name: "Benjamin Lee Peterson",
     role: "phd",
-    title: "PhD Student",
+    title: "PhD Student in Computer Science",
     photo: "",
-    bio: "This profile is a placeholder. Real lab member info will be added here soon.",
-    interests: ["[Research Interest]", "[Research Interest]"],
-    links: {},
-    joinYear: undefined,
-  },
-  {
-    id: "phd-student-placeholder-2",
-    name: "PhD Student (Coming Soon)",
-    role: "phd",
-    title: "PhD Student",
-    photo: "",
-    bio: "This profile is a placeholder. Real lab member info will be added here soon.",
-    interests: ["[Research Interest]", "[Research Interest]"],
-    links: {},
-    joinYear: undefined,
+    bio: `Ben Peterson is a PhD student in Computer Science in the School of Computing at Boise State University. His research centers on human-centered AI, with a particular focus on AI in education and the design of educational chatbots. He holds a bachelor's degree in Computer Engineering from Brigham Young University.
+Ben's work connects research, teaching, and service around a common thread: how people learn with and about AI. Alongside his doctoral studies, he serves as an IT Systems Administrator in the Computer Science department at Boise State and teaches as an adjunct professor, leading sections of CS 121 and CS 153. Beyond the university, he is Lead Coach for local FIRST Tech Challenge (FTC) and FIRST LEGO League teams, and he serves on the K-12 AI Standards writing committee for the State of Idaho, helping shape how students across the state learn about artificial intelligence.`,
+    interests: ["Human Centered AI"],
+    links: {
+      email: "benjaminpeterson@boisestate.edu",
+      github: "https://github.com/blpeter",
+      linkedin: "https://www.linkedin.com/in/ben-peterson-4901646",
+      googleScholar:
+        "https://scholar.google.com/citations?user=fWvBixgAAAAJ&hl=en",
+    },
+    joinYear: 2025,
   },
 
   // ── MS Students ─────────────────────────────────────────
@@ -184,8 +180,29 @@ export const team: TeamMember[] = [
     photo: "",
     bio: "This profile is a placeholder. Real lab member info will be added here soon.",
     interests: ["[Research Interest]"],
-    links: {},
+    links: {
+      email: "benjaminpeterson@boisestate.edu",
+      github: "https://github.com/blpeter",
+      linkedin: "https://www.linkedin.com/in/ben-peterson-4901646",
+      googleScholar:
+        "https://scholar.google.com/citations?user=fWvBixgAAAAJ&hl=en",
+    },
     joinYear: undefined,
+  },
+  {
+    id: "prabal-shrestha",
+    name: "Prabal Shrestha",
+    role: "ms",
+    title: "MS Student in Computer Science",
+    photo: "",
+    bio: "MS CS student at Boise State University researching multimodal LLMs, video-based fact-checking, and LLM-powered human simulation. Interested in how AI systems perceive and reason about video content, and in building systems that leverage language and vision models for real-world information integrity.",
+    interests: ["Multimodal Machine Learning", "LLM Agents"],
+    links: {
+      email: "prabalshrestha2@gmail.com",
+      github: "github.com/prabalshrestha",
+      linkedin: "linkedin.com/in/prabalshrestha",
+    },
+    joinYear: 2025,
   },
 
   // ── Undergraduate Researchers ───────────────────────────

@@ -4,7 +4,7 @@ export default function SocialLinks({ links }: { links: TeamMember['links'] }) {
   return (
     <div className="flex items-center gap-2 flex-wrap">
       {links.email && (
-        <a href={`mailto:${links.email}`} className="text-ink-faint hover:text-brand-purple transition-colors" aria-label="Email" title={links.email}>
+        <a href={`https://mail.google.com/mail/?view=cm&to=${links.email}`} target="_blank" rel="noreferrer" className="text-ink-faint hover:text-brand-purple transition-colors" aria-label="Email" title={links.email}>
           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
           </svg>

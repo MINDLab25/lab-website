@@ -1,15 +1,16 @@
-import { team, lab } from '@/data/site'
-import type { TeamMember } from '@/data/site'
-import Avatar from '@/components/Avatar'
-import SocialLinks from '@/components/SocialLinks'
+import { team, lab } from "@/data/site";
+import type { TeamMember } from "@/data/site";
+import Avatar from "@/components/Avatar";
+import SocialLinks from "@/components/SocialLinks";
+import BioExpand from "@/components/BioExpand";
 
 export default function TeamPage() {
-  const pi = team.find((m) => m.role === 'pi')!
-  const postdocs = team.filter((m) => m.role === 'postdoc')
-  const phd = team.filter((m) => m.role === 'phd')
-  const ms = team.filter((m) => m.role === 'ms')
-  const undergrads = team.filter((m) => m.role === 'undergrad')
-  const alumni = team.filter((m) => m.role === 'alumni')
+  const pi = team.find((m) => m.role === "pi")!;
+  const postdocs = team.filter((m) => m.role === "postdoc");
+  const phd = team.filter((m) => m.role === "phd");
+  const ms = team.filter((m) => m.role === "ms");
+  const undergrads = team.filter((m) => m.role === "undergrad");
+  const alumni = team.filter((m) => m.role === "alumni");
 
   return (
     <div className="container-content py-14 md:py-20">
@@ -31,11 +32,15 @@ export default function TeamPage() {
               <div>
                 <h3 className="text-xl font-semibold text-ink">{pi.name}</h3>
                 <p className="text-sm text-ink-muted mt-0.5">{pi.title}</p>
-                <p className="text-sm text-ink-faint">{lab.department}, {lab.university}</p>
+                <p className="text-sm text-ink-faint">
+                  {lab.department}, {lab.university}
+                </p>
               </div>
               <SocialLinks links={pi.links} />
             </div>
-            <p className="text-sm text-ink-secondary leading-relaxed mt-3">{pi.bio}</p>
+            <p className="text-sm text-ink-secondary leading-relaxed mt-3">
+              {pi.bio}
+            </p>
             <div className="flex flex-wrap gap-1.5 mt-4">
               {pi.interests.map((i) => (
                 <span
@@ -50,10 +55,14 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {postdocs.length > 0 && <MemberSection title="Postdoctoral Researchers" members={postdocs} />}
+      {postdocs.length > 0 && (
+        <MemberSection title="Postdoctoral Researchers" members={postdocs} />
+      )}
       {phd.length > 0 && <MemberSection title="PhD Students" members={phd} />}
       {ms.length > 0 && <MemberSection title="MS Students" members={ms} />}
-      {undergrads.length > 0 && <MemberSection title="Undergraduate Researchers" members={undergrads} />}
+      {undergrads.length > 0 && (
+        <MemberSection title="Undergraduate Researchers" members={undergrads} />
+      )}
 
       {/* Alumni */}
       {alumni.length > 0 && (
@@ -63,17 +72,31 @@ export default function TeamPage() {
           </h2>
           <div className="divide-y divide-surface-border border border-surface-border rounded-xl overflow-hidden bg-white">
             {alumni.map((member) => (
-              <div key={member.id} className="flex items-center gap-4 px-5 py-4">
-                <Avatar name={member.name} photo={member.photo || undefined} size="sm" />
+              <div
+                key={member.id}
+                className="flex items-center gap-4 px-5 py-4"
+              >
+                <Avatar
+                  name={member.name}
+                  photo={member.photo || undefined}
+                  size="sm"
+                />
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                    <span className="font-medium text-sm text-ink">{member.name}</span>
+                    <span className="font-medium text-sm text-ink">
+                      {member.name}
+                    </span>
                     {member.gradYear && (
-                      <span className="text-xs text-ink-faint">· {member.title} &rsquo;{String(member.gradYear).slice(-2)}</span>
+                      <span className="text-xs text-ink-faint">
+                        · {member.title} &rsquo;
+                        {String(member.gradYear).slice(-2)}
+                      </span>
                     )}
                   </div>
                   {member.currentPosition && (
-                    <p className="text-xs text-ink-muted mt-0.5">{member.currentPosition}</p>
+                    <p className="text-xs text-ink-muted mt-0.5">
+                      {member.currentPosition}
+                    </p>
                   )}
                 </div>
                 <div className="shrink-0">
@@ -85,10 +108,16 @@ export default function TeamPage() {
         </section>
       )}
     </div>
-  )
+  );
 }
 
-function MemberSection({ title, members }: { title: string; members: TeamMember[] }) {
+function MemberSection({
+  title,
+  members,
+}: {
+  title: string;
+  members: TeamMember[];
+}) {
   return (
     <section className="mb-12">
       <h2 className="text-xs font-semibold uppercase tracking-widest text-ink-faint mb-6">
@@ -100,22 +129,29 @@ function MemberSection({ title, members }: { title: string; members: TeamMember[
             key={member.id}
             className="p-5 rounded-xl border border-surface-border bg-white hover:border-surface-border-strong hover:shadow-sm transition-all"
           >
-            <div className="flex items-start gap-4">
-              <Avatar name={member.name} photo={member.photo || undefined} size="md" />
-              <div className="flex-1 min-w-0">
+            <div className="flex items-start gap-4 h-full">
+              <Avatar
+                name={member.name}
+                photo={member.photo || undefined}
+                size="md"
+              />
+              <div className="flex-1 min-w-0 flex flex-col">
                 <div className="flex items-start justify-between gap-2">
                   <div>
                     <h3 className="font-semibold text-ink">{member.name}</h3>
                     <p className="text-xs text-ink-muted mt-0.5">
                       {member.title}
                       {member.joinYear && (
-                        <span className="text-ink-faint"> &middot; Since {member.joinYear}</span>
+                        <span className="text-ink-faint">
+                          {" "}
+                          &middot; Since {member.joinYear}
+                        </span>
                       )}
                     </p>
                   </div>
                 </div>
-                <p className="text-xs text-ink-secondary leading-relaxed mt-2.5">{member.bio}</p>
-                <div className="flex flex-wrap gap-1 mt-2.5">
+                <BioExpand bio={member.bio} className="mt-2.5" />
+                <div className="flex flex-wrap gap-1 mt-auto pt-2.5">
                   {member.interests.map((i) => (
                     <span
                       key={i}
@@ -125,7 +161,7 @@ function MemberSection({ title, members }: { title: string; members: TeamMember[
                     </span>
                   ))}
                 </div>
-                <div className="mt-3">
+                <div className="flex justify-end mt-3">
                   <SocialLinks links={member.links} />
                 </div>
               </div>
@@ -134,5 +170,5 @@ function MemberSection({ title, members }: { title: string; members: TeamMember[
         ))}
       </div>
     </section>
-  )
+  );
 }
