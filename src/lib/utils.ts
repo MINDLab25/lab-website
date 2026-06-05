@@ -22,4 +22,12 @@ export function formatDate(iso: string, monthStyle: 'short' | 'long' = 'short') 
   })
 }
 
-export const labMemberNames = new Set(team.map((m) => m.name))
+export const labMemberNames = new Set(
+  team.flatMap((m) => {
+    const parts = m.name.split(' ')
+    if (parts.length >= 2 && TITLES.has(parts[0].toLowerCase())) {
+      return [m.name, parts.slice(1).join(' ')]
+    }
+    return [m.name]
+  })
+)

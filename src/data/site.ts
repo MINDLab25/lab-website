@@ -36,15 +36,15 @@ export const home = {
     { value: "30+", label: "Publications" },
     { value: "—", label: "Lab Members" }, // TODO: fill in
     { value: "20", label: "h-index" },
-    { value: "3", label: "Years at BSU" },
+    { value: "1", label: "Year at BSU" },
   ],
   // IDs referencing items in the publications and news arrays below
   featuredPublicationIds: [
-    "social-rag-chi-2025",
-    "correcting-misinfo-2024",
-    "fake-news-survey-csur-2020",
+    "multimodal-llms-synthetic-participants-2026",
+    "conspiracy-theories-icwsm-2026",
+    "chatbot-influence-arxiv-2025",
   ],
-  featuredNewsIds: ["rising-star-mit-2024", "rising-star-ds-2024", "wsdm-2026"],
+  featuredNewsIds: ["icwsm-2026-papers", "wsdm-2026-dc", "bsu-welcome-2025"],
 };
 
 // ──────────────────────────────────────────────────────────
@@ -73,7 +73,7 @@ export const researchAreas = [
     description:
       "Learning rich representations across text, images, and structured data to support reasoning tasks that span multiple modalities — from medical imaging to social media.",
     icon: "🌐",
-    memberIds: ["xinyi-zhou"],
+    memberIds: ["xinyi-zhou", "prabal-shrestha"],
   },
   {
     id: "llm-agents",
@@ -89,7 +89,7 @@ export const researchAreas = [
     description:
       "Translating research into practical systems for healthcare, education, and fact-checking — domains where accuracy, fairness, and interpretability are non-negotiable.",
     icon: "🏥",
-    memberIds: ["xinyi-zhou"],
+    memberIds: ["xinyi-zhou", "benjamin-lee-peterson"],
   },
 ];
 
@@ -168,6 +168,23 @@ Ben's work connects research, teaching, and service around a common thread: how 
         "https://scholar.google.com/citations?user=fWvBixgAAAAJ&hl=en",
     },
     joinYear: 2025,
+  },
+  {
+    id: "phd-student-placeholder-1",
+    name: "PHD Student (Coming Soon)",
+    role: "phd",
+    title: "PHD Student",
+    photo: "",
+    bio: "This profile is a placeholder. Real lab member info will be added here soon.",
+    interests: ["[Research Interest]"],
+    links: {
+      email: "benjaminpeterson@boisestate.edu",
+      github: "https://github.com/blpeter",
+      linkedin: "https://www.linkedin.com/in/ben-peterson-4901646",
+      googleScholar:
+        "https://scholar.google.com/citations?user=fWvBixgAAAAJ&hl=en",
+    },
+    joinYear: undefined,
   },
 
   // ── MS Students ─────────────────────────────────────────
@@ -250,11 +267,99 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
-  // ── 2025 ────────────────────────────────────────────────
+  // ── 2026 ────────────────────────────────────────────────
   {
-    id: "social-rag-chi-2025",
+    id: "multimodal-llms-synthetic-participants-2026",
     title:
-      "Social-RAG: Retrieving from Group Interactions to Socially Ground AI Generation",
+      "Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation",
+    authors: [
+      "Prabal Shrestha",
+      "Bohan Jiang",
+      "Haoning Xue",
+      "Huan Liu",
+      "Xinyi Zhou",
+    ],
+    venue:
+      "Workshop on Large Language Models for Social Reasoning and Simulation (SocialLLM) @ ICWSM",
+    year: 2026,
+    type: "workshop",
+    abstract: "[Abstract coming soon.]",
+    links: {},
+    tags: ["Multimodal ML", "LLMs", "Human Simulation", "Video Understanding"],
+    featured: true,
+  },
+  {
+    id: "conspiracy-theories-icwsm-2026",
+    title:
+      "Can Large Language Models Assess the Social Impact of Conspiracy Theories?",
+    authors: [
+      "Bohan Jiang",
+      "Dawei Li",
+      "Zhen Tan",
+      "Xinyi Zhou",
+      "Ashwin Rao",
+      "Kristina Lerman",
+      "H. Russell Bernard",
+      "Huan Liu",
+    ],
+    venue: "AAAI International Conference on Web and Social Media (ICWSM)",
+    year: 2026,
+    type: "conference",
+    abstract: "[Abstract coming soon.]",
+    links: {
+      pdf: "https://arxiv.org/abs/2412.07019",
+    },
+    tags: ["LLMs", "Misinformation", "Social Media", "Conspiracy Theories"],
+    featured: false,
+  },
+  {
+    id: "chatgpt-info-seeking-sr-2026",
+    title:
+      "Users' Prompting Strategies and ChatGPT's Contextual Adaptation Shape Conversational Information-Seeking Experiences",
+    authors: [
+      "Haoning Xue",
+      "Yoo Jung Oh",
+      "Xinyi Zhou",
+      "Xinyu Zhang",
+      "Berit Oxley",
+    ],
+    venue: "Scientific Reports",
+    year: 2026,
+    type: "journal",
+    abstract: "[Abstract coming soon.]",
+    links: {
+      pdf: "https://arxiv.org/abs/2509.25513",
+    },
+    tags: ["LLMs", "Human-AI Interaction", "Information Seeking"],
+    featured: false,
+  },
+
+  // ── 2025 (lab founded 2025-08-20) ───────────────────────
+  {
+    id: "chatbot-influence-arxiv-2025",
+    title:
+      "A Crowdsourced Study of ChatBot Influence in Value-Driven Decision Making Scenarios",
+    authors: [
+      "Anthony Wise",
+      "Xinyi Zhou",
+      "Martin Reimann",
+      "Anind Dey",
+      "Leilani Battle",
+    ],
+    venue: "arXiv preprint",
+    year: 2025,
+    type: "preprint",
+    abstract: "[Abstract coming soon.]",
+    links: {
+      pdf: "https://arxiv.org/abs/2511.15857",
+    },
+    tags: ["LLMs", "Human-AI Interaction", "Decision Making"],
+    featured: true,
+  },
+  {
+    id: "paperping-cscw-2025",
+    title:
+      "PaperPing: A Socially-aware AI Agent that Recommends Academic Papers to Research Group Chats with Contextualized Explanations",
     authors: [
       "Ruotong Wang",
       "Xinyi Zhou",
@@ -263,127 +368,15 @@ export const publications: Publication[] = [
       "Jonathan Bragg",
       "Amy X. Zhang",
     ],
-    venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI)",
-    year: 2025,
-    type: "conference",
-    abstract:
-      "Social-RAG is a workflow for socially grounding AI agents by retrieving context from prior group interactions, selecting relevant social signals, and feeding them into a language model to generate socially aligned messages. Deployed in PaperPing — a paper-recommendation agent for research group chats — across 18 channels reaching 500+ researchers over three months.",
-    links: {
-      pdf: "https://arxiv.org/abs/2411.02353",
-      project: "https://dl.acm.org/doi/10.1145/3706598.3713749",
-    },
-    tags: ["LLMs", "Social Computing", "RAG", "Human-AI Interaction"],
-    featured: true,
-  },
-  {
-    id: "paperping-cscw-2025",
-    title:
-      "PaperPing: A Socially-aware AI Agent that Recommends Academic Papers to Research Group Chats with Contextualized Explanations",
-    authors: ["Xinyi Zhou"],
     venue:
       "Companion Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW Companion)",
     year: 2025,
     type: "workshop",
     abstract: "[Abstract coming soon.]",
-    links: {},
+    links: {
+      project: "https://dl.acm.org/doi/10.1145/3715070.3757230",
+    },
     tags: ["LLM Agents", "Social Computing", "Human-AI Interaction"],
-    featured: false,
-  },
-
-  // ── 2024 ────────────────────────────────────────────────
-  {
-    id: "correcting-misinfo-2024",
-    title:
-      "Correcting Misinformation on Social Media with a Large Language Model",
-    authors: ["Xinyi Zhou", "Ashish Sharma", "Amy X. Zhang", "Tim Althoff"],
-    venue: "arXiv preprint",
-    year: 2024,
-    type: "preprint",
-    abstract:
-      "We propose MUSE, an LLM augmented with vision-language modeling and web retrieval over credible sources to detect and explain misinformation in social media posts. MUSE outperforms GPT-4 by 37% and high-quality human responses by 29%, and generalizes across modalities, domains, and political leanings.",
-    links: {
-      pdf: "https://arxiv.org/abs/2403.11169",
-    },
-    tags: ["LLMs", "Misinformation", "Social Media", "Fact-Checking"],
-    featured: true,
-  },
-  {
-    id: "fact-checking-cscw-2024",
-    title:
-      "Human-centered NLP Fact-checking: Co-Designing with Fact-checkers using Matchmaking for AI",
-    authors: ["Xinyi Zhou"],
-    venue: "Proceedings of the ACM on Human-Computer Interaction (CSCW)",
-    year: 2024,
-    type: "conference",
-    abstract: "[Abstract coming soon.]",
-    links: {
-      project: "https://dl.acm.org/doi/10.1145/3686962",
-    },
-    tags: ["Fact-Checking", "Human-AI Interaction", "NLP"],
-    featured: false,
-  },
-
-  // ── 2022 ────────────────────────────────────────────────
-  {
-    id: "fake-intent-www-2022",
-    title:
-      "'This is Fake! Shared it by Mistake': Assessing the Intent of Fake News Spreaders",
-    authors: [
-      "Xinyi Zhou",
-      "Kai Shu",
-      "Vir V. Phoha",
-      "Huan Liu",
-      "Reza Zafarani",
-    ],
-    venue: "The Web Conference (WWW)",
-    year: 2022,
-    type: "conference",
-    abstract: "[Abstract coming soon.]",
-    links: {},
-    tags: ["Fake News", "Misinformation", "Social Media", "NLP"],
-    featured: false,
-  },
-
-  // ── 2020 ────────────────────────────────────────────────
-  {
-    id: "fake-news-survey-csur-2020",
-    title:
-      "A Survey of Fake News: Fundamental Theories, Detection Methods, and Opportunities",
-    authors: ["Xinyi Zhou", "Reza Zafarani"],
-    venue: "ACM Computing Surveys (CSUR)",
-    year: 2020,
-    type: "journal",
-    abstract:
-      "A comprehensive survey of fake news research covering psychological and social theories behind misinformation spread, computational detection methods (knowledge-based, style-based, propagation-based, source-based), and open challenges. One of the most-cited works in the automated fact-checking literature.",
-    links: {},
-    tags: ["Fake News", "Survey", "Misinformation", "NLP"],
-    featured: true,
-  },
-  {
-    id: "safe-pakdd-2020",
-    title: "SAFE: Similarity-Aware Multi-Modal Fake News Detection",
-    authors: ["Xinyi Zhou", "Jindi Wu", "Reza Zafarani"],
-    venue:
-      "Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)",
-    year: 2020,
-    type: "conference",
-    abstract: "[Abstract coming soon.]",
-    links: {},
-    tags: ["Fake News", "Multimodal ML", "NLP"],
-    featured: false,
-  },
-  {
-    id: "recovery-cikm-2020",
-    title:
-      "ReCOVery: A Multimodal Repository for COVID-19 News Credibility Research",
-    authors: ["Xinyi Zhou", "Apurva Mulay", "Emilio Ferrara", "Reza Zafarani"],
-    venue:
-      "ACM International Conference on Information and Knowledge Management (CIKM)",
-    year: 2020,
-    type: "conference",
-    abstract: "[Abstract coming soon.]",
-    links: {},
-    tags: ["Dataset", "COVID-19", "Misinformation", "Multimodal ML"],
     featured: false,
   },
 ];
@@ -406,50 +399,65 @@ export interface NewsItem {
 }
 
 export const news: NewsItem[] = [
-  // ── Real news items ─────────────────────────────────────
   {
-    id: "rising-star-mit-2024",
-    date: "2024-10-15",
-    type: "award",
-    title: "Dr. Zhou Named MIT Rising Star in EECS 2024",
-    description:
-      "Dr. Xinyi Zhou has been recognized as a Rising Star in Electrical Engineering and Computer Science by MIT, one of the most competitive early-career honors in the field.",
-    link: "https://risingstars.mit.edu",
-  },
-  {
-    id: "rising-star-ds-2024",
-    date: "2024-09-20",
-    type: "award",
-    title: "Rising Star in Data Science — UCSD, UChicago & Stanford",
-    description:
-      "Dr. Zhou was honored as a Rising Star in Data Science by the University of California San Diego, the University of Chicago, and Stanford University in 2024.",
-  },
-  {
-    id: "wsdm-2026",
-    date: "2024-08-01",
-    type: "misc",
-    title: "Dr. Zhou Appointed Co-Chair, WSDM 2026 Doctoral Consortium",
-    description:
-      "Dr. Zhou will serve as Co-Chair of the Doctoral Consortium at the ACM International Conference on Web Search and Data Mining (WSDM) 2026.",
-  },
-
-  // ── Placeholder news items ──────────────────────────────
-  // TODO: replace with real news
-  {
-    id: "news-placeholder-1",
-    date: "2024-01-01",
+    id: "icwsm-2026-papers",
+    date: "2026-06-01",
     type: "paper",
-    title: "[Paper Acceptance — Placeholder]",
+    title: "Two Papers Accepted at ICWSM 2026",
     description:
-      "[News description coming soon. Replace this with a real paper acceptance, award, or lab update.]",
+      "Two papers accepted at the AAAI International Conference on Web and Social Media (ICWSM) 2026: 'Can Large Language Models Assess the Social Impact of Conspiracy Theories?' and 'Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation' (SocialLLM Workshop).",
   },
   {
-    id: "news-placeholder-2",
-    date: "2024-01-01",
-    type: "misc",
-    title: "[Lab Update — Placeholder]",
+    id: "chatgpt-sr-2026",
+    date: "2026-01-01",
+    type: "paper",
+    title: "Paper Published in Scientific Reports",
     description:
-      "[News description coming soon. Replace this with a real lab update, welcome post, or event announcement.]",
+      "Our paper 'Users' Prompting Strategies and ChatGPT's Contextual Adaptation Shape Conversational Information-Seeking Experiences' has been published in Scientific Reports and presented at ICA 2026.",
+  },
+  {
+    id: "wsdm-2026-dc",
+    date: "2026-02-22",
+    type: "event",
+    title: "Dr. Zhou Co-Chairs WSDM 2026 Doctoral Consortium",
+    description:
+      "Dr. Zhou served as Co-Chair of the Doctoral Consortium at WSDM 2026, held in Boise, Idaho — bringing the conference to her home institution.",
+    link: "https://wsdm-conference.org/2026/index.php/call-for-wsdm-doctoral-consortium/",
+  },
+  {
+    id: "chatbot-influence-2025",
+    date: "2025-11-19",
+    type: "paper",
+    title: "New Preprint: ChatBot Influence in Value-Driven Decision Making",
+    description:
+      "New preprint: 'A Crowdsourced Study of ChatBot Influence in Value-Driven Decision Making Scenarios' now available on arXiv.",
+    link: "https://arxiv.org/abs/2511.15857",
+  },
+  {
+    id: "paperping-cscw-2025-news",
+    date: "2025-10-01",
+    type: "paper",
+    title: "PaperPing Presented at CSCW Companion 2025",
+    description:
+      "Our paper 'PaperPing: A Socially-aware AI Agent that Recommends Academic Papers to Research Group Chats with Contextualized Explanations' was presented at CSCW Companion 2025.",
+  },
+  {
+    id: "chatgpt-info-seeking-2025",
+    date: "2025-09-29",
+    type: "paper",
+    title: "New Preprint: ChatGPT User Prompting Strategies",
+    description:
+      "New preprint: 'Users' Prompting Strategies and ChatGPT's Contextual Adaptation Shape Conversational Information-Seeking Experiences' now available on arXiv.",
+    link: "https://arxiv.org/abs/2509.25513",
+  },
+  {
+    id: "bsu-welcome-2025",
+    date: "2025-09-29",
+    type: "misc",
+    title: "Dr. Zhou Joins Boise State University as Assistant Professor",
+    description:
+      "Dr. Xinyi Zhou has joined the Department of Computer Science at Boise State University as an Assistant Professor, where she directs the Machine Intelligence and Data (MIND) Lab.",
+    link: "https://www.boisestate.edu/coen-cs/2025/09/29/computer-science-welcomes-new-faculty-fall-2025/",
   },
 ];
 
