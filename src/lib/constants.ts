@@ -23,6 +23,16 @@ export const pubTypeBadgeClass: Record<string, string> = {
   preprint: 'bg-gray-100 text-gray-600 ring-1 ring-gray-200',
 }
 
+// Kicker (option 1) colors for news type labels: dot fill + label text color
+export const newsTypeKicker: Record<string, { dot: string; text: string }> = {
+  paper: { dot: 'bg-purple-500', text: 'text-purple-600' },
+  award: { dot: 'bg-amber-500', text: 'text-amber-600' },
+  grant: { dot: 'bg-green-500', text: 'text-green-600' },
+  event: { dot: 'bg-blue-500', text: 'text-blue-600' },
+  misc: { dot: 'bg-gray-400', text: 'text-gray-500' },
+  press: { dot: 'bg-pink-500', text: 'text-pink-600' },
+}
+
 export const pubTypeLabel: Record<string, string> = {
   conference: 'Conference',
   journal: 'Journal',

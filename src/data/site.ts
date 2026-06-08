@@ -398,11 +398,26 @@ export interface NewsItem {
   type: NewsType;
   title: string;
   description: string;
-  /** Optional URL for a "Read more" link */
+  /** Optional URL for a single "Learn more" link */
   link?: string;
+  /** Optional named links (e.g. Paper, Slides, Poster) rendered side-by-side */
+  links?: { label: string; url: string }[];
 }
 
 export const news: NewsItem[] = [
+  {
+    id: "xinyi-socialllm-icwsm-2026",
+    date: "2026-06-26",
+    type: "event",
+    title: "Xinyi Presented at SocialLLM @ ICWSM 2026",
+    description:
+      'Xinyi presented "Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation" at the Large Language Models for Social Reasoning and Simulation Workshop at ICWSM 2026 in Los Angeles, CA. Check out our paper, slides, and poster!',
+    links: [
+      { label: "Paper", url: "#" },
+      { label: "Slides", url: "#" },
+      { label: "Poster", url: "#" },
+    ],
+  },
   {
     id: "icwsm-2026-papers",
     date: "2026-06-01",
