@@ -11,6 +11,7 @@ import JoinModal from '@/components/sections/JoinModal'
 
 export default function Page() {
   const [expandedPub, setExpandedPub] = useState<string | null>(null)
+  const [newsExpanded, setNewsExpanded] = useState(false)
   const [joinModalOpen, setJoinModalOpen] = useState(false)
 
   useEffect(() => {
@@ -22,7 +23,10 @@ export default function Page() {
   return (
     <>
       <HeroSection onOpenModal={() => setJoinModalOpen(true)} />
-      <NewsSection />
+      <NewsSection
+        expanded={newsExpanded}
+        onToggle={() => setNewsExpanded((v) => !v)}
+      />
       <ResearchSection />
       <PublicationsSection
         expandedId={expandedPub}

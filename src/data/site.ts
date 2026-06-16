@@ -15,11 +15,15 @@ export const lab = {
   college: "College of Engineering",
   tagline: "Trustworthy AI Systems for the Real World",
   description:
-    "We develop machine learning and data science methods that are trustworthy, personalized, and socially intelligent — with applications in healthcare, education, and fact-checking. Our research spans generative AI, multimodal learning, and LLM agents.",
+    "Hello! This is Machine Intelligence and Data Lab (MIND Lab) in the Computer Science Department at Boise State University. Our research centers on machine learning and foundation models with and for real-world social impact, integrating data- and human-centric methods to pursue intelligent futures where people and AI co-thrive.",
+  joinDescription: [
+    "We welcome self-motivated doctoral, master's, and undergraduate students who are passionate about AI, data science, and human-centered computing.",
+    "Please briefly tell us about yourself, your interests, and how your background aligns with our work, and send us your transcript and CV/resume.",
+  ],
   email: "mindlab20250820@gmail.com",
   phone: "(208) 426-5766",
-  address: "1910 University Dr, Boise, ID 83725",
-  room: "City Center Plaza (CCP), Room 255",
+  address: "Boise, ID 83702",
+  room: "City Center Plaza (CCP) 255, 777 W Main St",
   github: "https://github.com/MINDLab25",
   twitter: "https://twitter.com/",
   linkedin: "https://www.linkedin.com", // TODO: add lab LinkedIn URL
@@ -41,10 +45,13 @@ export const home = {
   // IDs referencing items in the publications and news arrays below
   featuredPublicationIds: [
     "multimodal-llms-synthetic-participants-2026",
-    "conspiracy-theories-icwsm-2026",
-    "chatbot-influence-arxiv-2025",
+    "correcting-misinformation-llm-2024",
   ],
-  featuredNewsIds: ["icwsm-2026-papers", "wsdm-2026-dc", "bsu-welcome-2025"],
+  featuredNewsIds: [
+    "xinyi-socialllm-icwsm-2026",
+    "xinyi-coen-early-scholar-2026",
+    "wsdm-2026-dc",
+  ],
 };
 
 // ──────────────────────────────────────────────────────────
@@ -52,44 +59,36 @@ export const home = {
 // ──────────────────────────────────────────────────────────
 export const researchAreas = [
   {
-    id: "trustworthy-ai",
-    title: "Trustworthy Generative AI",
+    id: "trust-and-safety",
+    title: "Trust and Safety",
     description:
-      "Developing methods to improve the factual accuracy and reliability of large language models, with a focus on hallucination detection, grounding, and fact-checking at scale.",
+      "AI, especially generative AI, is increasingly used by millions to billions of people and is shaping high-stakes decisions, making trust and safety central concerns. We develop methods to evaluate these systems and make them more factually accurate, explainable, accountable, robust to manipulation, aligned with human values, and less biased or harmful across groups.",
     icon: "🛡️",
-    memberIds: ["xinyi-zhou"],
+    memberIds: ["anh-bui"],
   },
   {
-    id: "personalized-llms",
-    title: "Personalized & Socially Intelligent LLMs",
+    id: "human-ai-collaboration",
+    title: "Human–AI Collaboration",
     description:
-      "Building language models that adapt to individual users and social contexts — personalizing responses, modeling user intent, and navigating complex interpersonal dynamics.",
+      "Human and artificial intelligence are complementary, each offering distinct strengths. We study these differences and develop tools and systems that enable humans and AI to work together synergistically.",
     icon: "🤝",
-    memberIds: ["xinyi-zhou"],
+    memberIds: ["benjamin-lee-peterson", "prabal-shrestha"],
   },
   {
-    id: "multimodal-ml",
-    title: "Multimodal Machine Learning",
+    id: "multimodality",
+    title: "Multimodality",
     description:
-      "Learning rich representations across text, images, and structured data to support reasoning tasks that span multiple modalities — from medical imaging to social media.",
+      "The web and the world are multimodal, spanning interconnected text, images, audio, and video. We extract actionable insights from these data, develop methods to learn from both content and relationships within and across modalities, and augment foundation models through effective multimodal retrieval.",
     icon: "🌐",
-    memberIds: ["xinyi-zhou", "prabal-shrestha"],
+    memberIds: ["prabal-shrestha"],
   },
   {
-    id: "llm-agents",
-    title: "LLM Agents & Tool-Use",
+    id: "future-of-work-health-education",
+    title: "Future of Work, Health, and Education",
     description:
-      "Studying how large language models can act as autonomous agents that plan, use external tools, and complete multi-step tasks reliably and safely.",
-    icon: "🤖",
-    memberIds: ["xinyi-zhou"],
-  },
-  {
-    id: "applied-ai",
-    title: "Applied AI in High-Stakes Domains",
-    description:
-      "Translating research into practical systems for healthcare, education, and fact-checking — domains where accuracy, fairness, and interpretability are non-negotiable.",
-    icon: "🏥",
-    memberIds: ["xinyi-zhou", "benjamin-lee-peterson"],
+      "We develop use-inspired AI for high-stakes domains, with a special focus on improving workplaces, healthcare, and education.",
+    icon: "🎯",
+    memberIds: ["stephanie-grim", "benjamin-lee-peterson"],
   },
 ];
 
@@ -170,19 +169,18 @@ Ben's work connects research, teaching, and service around a common thread: how 
     joinYear: 2025,
   },
   {
-    id: "phd-student-placeholder-1",
-    name: "PHD Student (Coming Soon)",
+    id: "stephanie-grim",
+    name: "Stephanie Grim",
     role: "phd",
-    title: "PHD Student",
+    title: "PhD Student in Computer Science",
     photo: "",
-    bio: "This profile is a placeholder. Real lab member info will be added here soon.",
-    interests: ["[Research Interest]"],
+    bio: 'Stephanie joins the lab as an incoming PhD student with over a decade of experience in human subjects and healthcare research. She has worked closely with patients, clinicians, and research teams, seeing firsthand how health technologies are used in practice. She hopes to draw on this experience in her work on machine learning and human-centered AI, particularly in understanding how tools such as large language models can be developed and implemented in ways that support patients, clinicians, and health systems. She is excited about combining rigorous yet responsible research methods with practical healthcare needs. Outside of research, Stephanie is an avid outdoorsperson who spends much of her free time snowboarding, trail running, and mountain biking. She also loves animals and frequently fosters rescue puppies while they wait for their "furever" homes. ',
+    interests: ["Future of Work, Health, and Education"],
     links: {
-      email: "benjaminpeterson@boisestate.edu",
-      github: "https://github.com/blpeter",
-      linkedin: "https://www.linkedin.com/in/ben-peterson-4901646",
+      email: "stephgrim@gmail.com",
+      linkedin: "https://www.linkedin.com/in/stephanie-grim-01841a111/",
       googleScholar:
-        "https://scholar.google.com/citations?user=fWvBixgAAAAJ&hl=en",
+        "https://scholar.google.com/citations?user=Oc7FM-4AAAAJ&hl=en",
     },
     joinYear: undefined,
   },
@@ -190,19 +188,16 @@ Ben's work connects research, teaching, and service around a common thread: how 
   // ── MS Students ─────────────────────────────────────────
   // TODO: replace with real lab members
   {
-    id: "ms-student-placeholder-1",
-    name: "MS Student (Coming Soon)",
+    id: "anh-bui",
+    name: "Anh Bui",
     role: "ms",
-    title: "MS Student",
+    title: "MS Student in Computer Science",
     photo: "",
     bio: "This profile is a placeholder. Real lab member info will be added here soon.",
-    interests: ["[Research Interest]"],
+    interests: ["[Trust and Safety]"],
     links: {
-      email: "benjaminpeterson@boisestate.edu",
-      github: "https://github.com/blpeter",
-      linkedin: "https://www.linkedin.com/in/ben-peterson-4901646",
-      googleScholar:
-        "https://scholar.google.com/citations?user=fWvBixgAAAAJ&hl=en",
+      email: "buianh1108@gmail.com",
+      linkedin: "https://www.linkedin.com/in/anh-bui-b527b211b/",
     },
     joinYear: undefined,
   },
@@ -213,11 +208,13 @@ Ben's work connects research, teaching, and service around a common thread: how 
     title: "MS Student in Computer Science",
     photo: "",
     bio: "MS CS student at Boise State University researching multimodal LLMs, video-based fact-checking, and LLM-powered human simulation. Interested in how AI systems perceive and reason about video content, and in building systems that leverage language and vision models for real-world information integrity.",
-    interests: ["Multimodal Machine Learning", "LLM Agents"],
+    interests: ["Human–AI Collaboration", "Multimodality"],
     links: {
       email: "prabalshrestha2@gmail.com",
       github: "github.com/prabalshrestha",
       linkedin: "linkedin.com/in/prabalshrestha",
+      googleScholar:
+        "https://scholar.google.com/citations?user=a5BsiBIAAAAJ&hl=en",
     },
     joinYear: 2025,
   },
@@ -255,11 +252,13 @@ export interface Publication {
   links: {
     pdf?: string;
     code?: string;
-    project?: string;
+    artt?: string;
     slides?: string;
+    poster?: string;
     demo?: string;
   };
-  tags: string[];
+  /** BibTeX entry shown by the "Cite" button — auto-generated; review/edit as needed */
+  bibtex?: string;
   /** Show on home page */
   featured: boolean;
   /** e.g. "Oral", "Spotlight", "Best Paper Award" */
@@ -284,104 +283,53 @@ export const publications: Publication[] = [
     year: 2026,
     type: "workshop",
     abstract:
-      "Multimodal large language models (MLLMs) have shown strong performance on objective tasks such as video understanding and reasoning. However, it remains unclear whether they can approximate subjective human responses, which depend not only oncontent comprehension but also on individuals’ social contexts. To address this gap, we evaluate MLLMs as synthetic participants in an emerging task: assessing perceived sensory engagement with short videos. Grounded in the Perceived Message Sensation Value (PMSV) framework, we compare ratings from recruited human participants and profile-conditioned MLLM simulations (n = 673) using a 17-item scale measuring emotional arousal, dramatic impact, and novelty. We find that even leading MLLMs (Gemini 3 Flash and Qwen 3 Omni) show limited agreement with human participants. The models exhibit distinct downward mean-shift and central-tendency biases in their rating distributions. They both introduce and flatten subgroup differences, while showing inconsistent sensitivity to participant profiles. Prompting strategies affect these metrics differently, modestly improving some aspects while worsening others. These results highlight both the challenges and opportunities of developing MLLMs as synthetic participants in videobased research.",
+      "Multimodal large language models (MLLMs) have shown strong performance on objective tasks such as video understanding and reasoning. However, it remains unclear whether they can approximate subjective human responses, which depend not only on content comprehension but also on individuals’ social contexts. To address this gap, we evaluate MLLMs as synthetic participants in an emerging task: assessing perceived sensory engagement with short videos. Grounded in the Perceived Message Sensation Value (PMSV) framework, we compare ratings from recruited human participants and profile-conditioned MLLM simulations (n = 673) using a 17-item scale measuring emotional arousal, dramatic impact, and novelty. We find that even leading MLLMs (Gemini 3 Flash and Qwen 3 Omni) show limited agreement with human participants. The models exhibit distinct downward mean-shift and central-tendency biases in their rating distributions. They both introduce and flatten subgroup differences, while showing inconsistent sensitivity to participant profiles. Prompting strategies affect these metrics differently, modestly improving some aspects while worsening others. These results highlight both the challenges and opportunities of developing MLLMs as synthetic participants in video-based research.",
     links: {
       pdf: "https://workshop-proceedings.icwsm.org/pdf/2026_66.pdf",
-      code: "https://github.com/MINDLab25/mllmhuman-simulation-eval",
+      code: "https://github.com/MINDLab25/mllm-human-simulation-eval",
+      poster:
+        "https://drive.google.com/file/d/1OGv12vCDLkVxIIPibSXjo7UF9rgBf4Yx/view?usp=drive_link",
+      slides:
+        "https://drive.google.com/file/d/1LdIbn39RRcgDTZu4c0BM28TajSaxS1vy/view?usp=drive_link",
     },
-    tags: ["Multimodal ML", "LLMs", "Human Simulation", "Video Understanding"],
+    bibtex: `@misc{shrestha2026multimodallargelanguagemodels,
+      title={Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation},
+      author={Prabal Shrestha and Bohan Jiang and Haoning Xue and Huan Liu and Xinyi Zhou},
+      year={2026},
+      eprint={2606.07541},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2606.07541},
+}`,
     featured: true,
-  },
-  {
-    id: "conspiracy-theories-icwsm-2026",
-    title:
-      "Can Large Language Models Assess the Social Impact of Conspiracy Theories?",
-    authors: [
-      "Bohan Jiang",
-      "Dawei Li",
-      "Zhen Tan",
-      "Xinyi Zhou",
-      "Ashwin Rao",
-      "Kristina Lerman",
-      "H. Russell Bernard",
-      "Huan Liu",
-    ],
-    venue: "AAAI International Conference on Web and Social Media (ICWSM)",
-    year: 2026,
-    type: "conference",
-    abstract: "[Abstract coming soon.]",
-    links: {
-      pdf: "https://arxiv.org/abs/2412.07019",
-    },
-    tags: ["LLMs", "Misinformation", "Social Media", "Conspiracy Theories"],
-    featured: false,
-  },
-  {
-    id: "chatgpt-info-seeking-sr-2026",
-    title:
-      "Users' Prompting Strategies and ChatGPT's Contextual Adaptation Shape Conversational Information-Seeking Experiences",
-    authors: [
-      "Haoning Xue",
-      "Yoo Jung Oh",
-      "Xinyi Zhou",
-      "Xinyu Zhang",
-      "Berit Oxley",
-    ],
-    venue: "Scientific Reports",
-    year: 2026,
-    type: "journal",
-    abstract: "[Abstract coming soon.]",
-    links: {
-      pdf: "https://arxiv.org/abs/2509.25513",
-    },
-    tags: ["LLMs", "Human-AI Interaction", "Information Seeking"],
-    featured: false,
   },
 
-  // ── 2025 (lab founded 2025-08-20) ───────────────────────
+  // ── 2024 ────────────────────────────────────────────────
   {
-    id: "chatbot-influence-arxiv-2025",
+    id: "correcting-misinformation-llm-2024",
     title:
-      "A Crowdsourced Study of ChatBot Influence in Value-Driven Decision Making Scenarios",
-    authors: [
-      "Anthony Wise",
-      "Xinyi Zhou",
-      "Martin Reimann",
-      "Anind Dey",
-      "Leilani Battle",
-    ],
+      "Correcting misinformation on social media with a large language model",
+    authors: ["Xinyi Zhou", "Ashish Sharma", "Amy X Zhang", "Tim Althoff"],
     venue: "arXiv preprint",
-    year: 2025,
+    year: 2024,
     type: "preprint",
-    abstract: "[Abstract coming soon.]",
+    abstract:
+      'Real-world information, often multimodal, can be misinformed or potentially misleading due to factual errors, outdated claims, missing context, misinterpretation, and more. Such "misinformation" is understudied, challenging to address, and harms many social domains -- particularly on social media, where it can spread rapidly. Manual correction that identifies and explains its (in)accuracies is widely accepted but difficult to scale. While large language models (LLMs) can generate human-like language that could accelerate misinformation correction, they struggle with outdated information, hallucinations, and limited multimodal capabilities. We propose MUSE, an LLM augmented with vision-language modeling and web retrieval over relevant, credible sources to generate responses that determine whether and which part(s) of the given content can be misinformed or potentially misleading, and to explain why with grounded references. We further define a comprehensive set of rubrics to measure response quality, ranging from the accuracy of identifications and factuality of explanations to the relevance and credibility of references. Results show that MUSE consistently produces high-quality outputs across diverse social media content (e.g., modalities, domains, political leanings), including content that has not previously been fact-checked online. Overall, MUSE outperforms GPT-4 by 37% and even high-quality responses from social media users by 29%. Our work provides a general methodological and evaluative framework for correcting misinformation at scale.',
     links: {
-      pdf: "https://arxiv.org/abs/2511.15857",
+      pdf: "https://arxiv.org/pdf/2403.11169",
+      code: "https://github.com/Social-Futures-Lab/MUSE",
+      artt: "https://artt.discourselabs.org/post/how-were-adding-ai-to-the-artt-tool",
     },
-    tags: ["LLMs", "Human-AI Interaction", "Decision Making"],
+    bibtex: `@misc{zhou2026correctingmisinformationsocialmedia,
+      title={Correcting misinformation on social media with a large language model},
+      author={Xinyi Zhou and Ashish Sharma and Amy X. Zhang and Tim Althoff},
+      year={2026},
+      eprint={2403.11169},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2403.11169},
+}`,
     featured: true,
-  },
-  {
-    id: "paperping-cscw-2025",
-    title:
-      "PaperPing: A Socially-aware AI Agent that Recommends Academic Papers to Research Group Chats with Contextualized Explanations",
-    authors: [
-      "Ruotong Wang",
-      "Xinyi Zhou",
-      "Lin Qiu",
-      "Joseph Chee Chang",
-      "Jonathan Bragg",
-      "Amy X. Zhang",
-    ],
-    venue:
-      "Companion Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW Companion)",
-    year: 2025,
-    type: "workshop",
-    abstract: "[Abstract coming soon.]",
-    links: {
-      project: "https://dl.acm.org/doi/10.1145/3715070.3757230",
-    },
-    tags: ["LLM Agents", "Social Computing", "Human-AI Interaction"],
-    featured: false,
   },
 ];
 
@@ -413,70 +361,119 @@ export const news: NewsItem[] = [
     description:
       'Xinyi presented "Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation" at the Large Language Models for Social Reasoning and Simulation Workshop at ICWSM 2026 in Los Angeles, CA. Check out our paper, slides, and poster!',
     links: [
-      { label: "Paper", url: "#" },
-      { label: "Slides", url: "#" },
-      { label: "Poster", url: "#" },
+      {
+        label: "Paper",
+        url: "https://arxiv.org/abs/2606.07541",
+      },
+      {
+        label: "Slides",
+        url: "https://drive.google.com/file/d/1LdIbn39RRcgDTZu4c0BM28TajSaxS1vy/view?usp=drive_link",
+      },
+      {
+        label: "Poster",
+        url: "https://drive.google.com/file/d/1OGv12vCDLkVxIIPibSXjo7UF9rgBf4Yx/view?usp=drive_link",
+      },
     ],
   },
   {
-    id: "icwsm-2026-papers",
-    date: "2026-06-01",
-    type: "paper",
-    title: "Two Papers Accepted at ICWSM 2026",
+    id: "xinyi-ai-institute-2026",
+    date: "2026-05-14",
+    type: "event",
+    title: "Xinyi Spoke at 2026 AI Institute for Teaching and Learning",
     description:
-      "Two papers accepted at the AAAI International Conference on Web and Social Media (ICWSM) 2026: 'Can Large Language Models Assess the Social Impact of Conspiracy Theories?' and 'Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation' (SocialLLM Workshop).",
+      "Xinyi spoke as a panelist at Boise State University's 2026 AI Institute for Teaching and Learning Workshop, discussing ethics and integrity in an AI-enhanced campus.",
   },
   {
-    id: "chatgpt-sr-2026",
-    date: "2026-01-01",
-    type: "paper",
-    title: "Paper Published in Scientific Reports",
+    id: "welcome-anh-2026",
+    date: "2026-05-11",
+    type: "misc",
+    title: "Welcome Anh to the Lab",
     description:
-      "Our paper 'Users' Prompting Strategies and ChatGPT's Contextual Adaptation Shape Conversational Information-Seeking Experiences' has been published in Scientific Reports and presented at ICA 2026.",
+      "We're excited to welcome Anh Bui to the lab as a summer intern working on an AI safety project, in collaboration with the fantastic Dr. Casey Kennington!",
+    // link: "https://shorturl.at/XoPuq",
+  },
+  {
+    id: "socialllm-icwsm-2026-accepted",
+    date: "2026-04-30",
+    type: "paper",
+    title: "Paper Accepted to SocialLLM @ ICWSM 2026",
+    description:
+      'The paper, "Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation," by Prabal Shrestha, Bohan Jiang (ASU), Haoning Xue (Utah), Huan Liu (ASU), Xinyi Zhou, was accepted to the Large Language Models for Social Reasoning and Simulation Workshop at ICWSM 2026. Congratulations to Prabal on being the lead author, and many thanks to our wonderful collaborators!',
+    link: "https://workshop-proceedings.icwsm.org/abstract.php?id=2026_66",
+  },
+  {
+    id: "xinyi-coen-early-scholar-2026",
+    date: "2026-04-29",
+    type: "award",
+    title: "Xinyi Received COEN Early Scholar Award",
+    description:
+      "Congratulations to Xinyi, the sole recipient of the Early Career Scholar Award from the College of Engineering at Boise State University!",
+  },
+  {
+    id: "prabal-ben-grad-showcase-2026",
+    date: "2026-04-08",
+    type: "event",
+    title: "Ben and Prabal Presented at Boise State Graduate Showcase",
+    description:
+      "Ben and Prabal presented posters on their research in AI for human simulation and learning at Boise State University's Graduate Student Showcase.",
+  },
+  {
+    id: "ben-nsf-access-grant-2026",
+    date: "2026-03-30",
+    type: "award",
+    title: "Ben Received NSF ACCESS Travel Grant",
+    description:
+      "Congratulations to Ben on receiving a travel grant to the AI Unlocked Workshop by NSF ACCESS, NAIRR Pilot, and CU Boulder!",
+    link: "https://www.colorado.edu/rc/ai-unlocked-empowering-higher-education-through-research-and-discovery",
   },
   {
     id: "wsdm-2026-dc",
     date: "2026-02-22",
     type: "event",
-    title: "Dr. Zhou Co-Chairs WSDM 2026 Doctoral Consortium",
+    title: "Xinyi Chaired WSDM 2026 Doctoral Consortium",
     description:
-      "Dr. Zhou served as Co-Chair of the Doctoral Consortium at WSDM 2026, held in Boise, Idaho — bringing the conference to her home institution.",
-    link: "https://wsdm-conference.org/2026/index.php/call-for-wsdm-doctoral-consortium/",
+      "Xinyi co-chaired the Doctoral Consortium track at WSDM 2026 with Dr. Antonela Tommasel (CONICET) in Boise, a vibrant city in ID. Grateful to all who contributed and participated, including the PhD students, keynote speaker, mentors, panelists, and audience, for making the Consortium a success!",
+    link: "https://www.linkedin.com/posts/xyzhou59_wsdm2026-share-7431193814897291264-Sirb/",
   },
   {
-    id: "chatbot-influence-2025",
-    date: "2025-11-19",
-    type: "paper",
-    title: "New Preprint: ChatBot Influence in Value-Driven Decision Making",
-    description:
-      "New preprint: 'A Crowdsourced Study of ChatBot Influence in Value-Driven Decision Making Scenarios' now available on arXiv.",
-    link: "https://arxiv.org/abs/2511.15857",
-  },
-  {
-    id: "paperping-cscw-2025-news",
-    date: "2025-10-01",
-    type: "paper",
-    title: "PaperPing Presented at CSCW Companion 2025",
-    description:
-      "Our paper 'PaperPing: A Socially-aware AI Agent that Recommends Academic Papers to Research Group Chats with Contextualized Explanations' was presented at CSCW Companion 2025.",
-  },
-  {
-    id: "chatgpt-info-seeking-2025",
-    date: "2025-09-29",
-    type: "paper",
-    title: "New Preprint: ChatGPT User Prompting Strategies",
-    description:
-      "New preprint: 'Users' Prompting Strategies and ChatGPT's Contextual Adaptation Shape Conversational Information-Seeking Experiences' now available on arXiv.",
-    link: "https://arxiv.org/abs/2509.25513",
-  },
-  {
-    id: "bsu-welcome-2025",
-    date: "2025-09-29",
+    id: "welcome-ben-prabal-2026",
+    date: "2026-01-12",
     type: "misc",
-    title: "Dr. Zhou Joins Boise State University as Assistant Professor",
+    title: "Welcome Ben and Prabal to the Lab",
     description:
-      "Dr. Xinyi Zhou has joined the Department of Computer Science at Boise State University as an Assistant Professor, where she directs the Machine Intelligence and Data (MIND) Lab.",
-    link: "https://www.boisestate.edu/coen-cs/2025/09/29/computer-science-welcomes-new-faculty-fall-2025/",
+      "Excited to welcome Ben Peterson as the lab's first PhD student and Prabal Shrestha as its first MS student!",
+  },
+  {
+    id: "xinyi-idaho-tech-council-2026",
+    date: "2026-01-09",
+    type: "event",
+    title: "Xinyi Spoke at Idaho Technology Council",
+    description:
+      "Xinyi spoke as a panelist in the Idaho Technology Council Spark Series online workshops, discussing emerging tech trends to watch in 2026.",
+  },
+  {
+    id: "xinyi-sioc-seminar-2025",
+    date: "2025-12-08",
+    type: "event",
+    title: "Xinyi Spoke at the Social Impacts of Computing Seminar",
+    description:
+      "Xinyi gave an invited talk at Boise State University's Social Impacts of Computing (SioC) Seminar on her research in AI for societal impact.",
+  },
+  {
+    id: "xinyi-ece-seminar-2025",
+    date: "2025-11-12",
+    type: "event",
+    title: "Xinyi Spoke at Boise State ECE Seminar",
+    description:
+      "Xinyi gave an invited talk at Boise State University's ECE Seminar on her research in AI for societal impact.",
+  },
+  {
+    id: "mind-lab-day-one-2025",
+    date: "2025-08-20",
+    type: "misc",
+    title: "Day One of MIND Lab",
+    description:
+      "Excited to announce the establishment of MIND Lab, with research centered around AI, data, and people.",
   },
 ];
 

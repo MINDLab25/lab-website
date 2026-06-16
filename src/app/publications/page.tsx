@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { publications } from '@/data/site'
+import CiteButton from '@/components/CiteButton'
 import { labMemberNames } from '@/lib/utils'
 import { pubTypeBadgeClass, pubTypeLabel } from '@/lib/constants'
 
@@ -34,16 +35,14 @@ export default function PublicationsPage() {
 
   const [yearFilter, setYearFilter] = useState<number | 'all'>('all')
   const [typeFilter, setTypeFilter] = useState<string>('all')
-  const [tagFilter, setTagFilter] = useState<string>('all')
   const [expandedId, setExpandedId] = useState<string | null>(null)
 
   const filtered = useMemo(() => {
     return publications
       .filter((p) => yearFilter === 'all' || p.year === yearFilter)
       .filter((p) => typeFilter === 'all' || p.type === typeFilter)
-      .filter((p) => tagFilter === 'all' || p.tags.includes(tagFilter))
       .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
-  }, [yearFilter, typeFilter, tagFilter])
+  }, [yearFilter, typeFilter])
 
   // Group by year
   const byYear: Record<number, typeof publications> = {}
@@ -155,23 +154,6 @@ export default function PublicationsPage() {
                           {/* Venue */}
                           <p className="text-xs text-ink-faint mt-1 italic">{pub.venue}</p>
 
-                          {/* Tags */}
-                          <div className="flex flex-wrap gap-1.5 mt-2.5">
-                            {pub.tags.map((tag) => (
-                              <button
-                                key={tag}
-                                onClick={() => setTagFilter(tagFilter === tag ? 'all' : tag)}
-                                className={`text-[11px] px-2 py-0.5 rounded-full border transition-colors cursor-pointer ${
-                                  tagFilter === tag
-                                    ? 'bg-ink text-white border-ink'
-                                    : 'bg-surface-subtle border-surface-border text-ink-muted hover:border-surface-border-strong hover:text-ink'
-                                }`}
-                              >
-                                {tag}
-                              </button>
-                            ))}
-                          </div>
-
                           {/* Abstract (expandable) */}
                           {isExpanded && (
                             <p className="mt-3 text-sm text-ink-secondary leading-relaxed border-l-2 border-surface-border pl-3">
@@ -207,14 +189,14 @@ export default function PublicationsPage() {
                                 Code
                               </a>
                             )}
-                            {pub.links.project && (
+                            {pub.links.artt && (
                               <a
-                                href={pub.links.project}
+                                href={pub.links.artt}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="text-xs font-medium text-ink-muted hover:text-ink transition-colors"
                               >
-                                Project Page
+                                ARTT
                               </a>
                             )}
                             {pub.links.demo && (
@@ -237,6 +219,17 @@ export default function PublicationsPage() {
                                 Slides
                               </a>
                             )}
+                            {pub.links.poster && (
+                              <a
+                                href={pub.links.poster}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-xs font-medium text-ink-muted hover:text-ink transition-colors"
+                              >
+                                Poster
+                              </a>
+                            )}
+                            <CiteButton bibtex={pub.bibtex} />
                             <button
                               onClick={() => setExpandedId(isExpanded ? null : pub.id)}
                               className="text-xs font-medium text-ink-faint hover:text-ink transition-colors ml-auto"

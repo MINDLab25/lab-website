@@ -1,5 +1,6 @@
 import { publications } from '@/data/site'
 import SectionHeading from '@/components/SectionHeading'
+import CiteButton from '@/components/CiteButton'
 import { labMemberNames } from '@/lib/utils'
 import { pubTypeBadgeClass, pubTypeLabel } from '@/lib/constants'
 
@@ -49,17 +50,6 @@ export default function PublicationsSection({
 
                     <p className="text-xs text-ink-faint italic mb-2.5">{pub.venue}</p>
 
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {pub.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[11px] px-2 py-0.5 rounded-full bg-surface-subtle border border-surface-border text-ink-faint"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
                     {isExpanded && (
                       <p className="mb-3 text-sm text-ink-secondary leading-relaxed border-l-2 border-surface-border pl-3">
                         {pub.abstract}
@@ -85,13 +75,13 @@ export default function PublicationsSection({
                           Code
                         </a>
                       )}
-                      {pub.links.project && (
-                        <a href={pub.links.project} target="_blank" rel="noreferrer"
+                      {pub.links.artt && (
+                        <a href={pub.links.artt} target="_blank" rel="noreferrer"
                           className="flex items-center gap-1 text-xs font-medium text-ink-muted hover:text-ink transition-colors">
                           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                           </svg>
-                          Project
+                          ARTT
                         </a>
                       )}
                       {pub.links.demo && (
@@ -113,6 +103,16 @@ export default function PublicationsSection({
                           Slides
                         </a>
                       )}
+                      {pub.links.poster && (
+                        <a href={pub.links.poster} target="_blank" rel="noreferrer"
+                          className="flex items-center gap-1 text-xs font-medium text-ink-muted hover:text-ink transition-colors">
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 6v12m6-12v12M4.5 6h15M4.5 18h15M3 6h18M3 18h18" />
+                          </svg>
+                          Poster
+                        </a>
+                      )}
+                      <CiteButton bibtex={pub.bibtex} />
                       <button
                         onClick={() => onToggle(pub.id)}
                         className="ml-auto text-xs font-medium text-ink-faint hover:text-ink transition-colors"

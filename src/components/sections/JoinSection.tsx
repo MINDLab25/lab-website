@@ -13,11 +13,11 @@ export default function JoinSection({ onOpenModal }: { onOpenModal: () => void }
           className="w-12 h-12 mx-auto mb-5 opacity-90"
         />
         <h2 className="text-2xl font-semibold mb-3">Interested in Joining?</h2>
-        <p className="text-ink-muted max-w-xl mx-auto mb-6 leading-relaxed">
-          We welcome applications from PhD students, MS students, and undergraduates
-          passionate about machine learning, data science, and trustworthy AI.
-          Send a brief introduction and your CV.
-        </p>
+        <div className="text-ink-muted max-w-xl mx-auto mb-6 leading-relaxed space-y-3">
+          {lab.joinDescription.map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
         <button
           onClick={onOpenModal}
           className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-surface-border-strong text-ink text-sm font-medium hover:bg-surface-subtle transition-colors"
@@ -29,7 +29,10 @@ export default function JoinSection({ onOpenModal }: { onOpenModal: () => void }
         </button>
 
         <div className="mt-10 space-y-1 text-sm text-ink-faint">
+          <p>Computer Science Department</p>
+          <p>{lab.university}</p>
           <p>{lab.room}</p>
+          <p>{lab.address}</p>
           <p>
             <a href={`mailto:${lab.email}`} className="hover:text-brand-purple transition-colors">
               {lab.email}

@@ -12,7 +12,7 @@ export default function HeroSection({
     >
       <div className="max-w-2xl">
         <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-ink">
-          Machine Intelligence <span className="gradient-text">and Data</span>
+          <span className="gradient-text">MIND</span> Lab
         </h1>
         <p className="text-lg text-ink-secondary leading-relaxed mt-5">
           {lab.description}
