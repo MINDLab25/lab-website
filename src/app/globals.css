@@ -5,6 +5,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
+  /* Brand colors as space-separated RGB triplets so Tailwind's <alpha-value>
+     opacity modifiers (e.g. from-brand-purple/20) keep working. */
+  :root {
+    --brand-purple: 147 51 234; /* #9333EA */
+    --brand-pink: 236 72 153;   /* #EC4899 */
+    --brand-orange: 249 115 22; /* #F97316 */
+  }
+
+  /* Alternate color profile — blue → teal/green → orange, sampled from
+     public/images/lab-alt-logo.png. Toggled on <html> for the /alt routes. */
+  .theme-alt {
+    --brand-purple: 56 146 234;  /* #3892EA blue   */
+    --brand-pink: 43 182 166;    /* #2BB6A6 teal   */
+    --brand-orange: 240 153 46;  /* #F0992E orange */
+  }
+
   html {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -28,7 +44,7 @@
 @layer utilities {
   /* Gradient text — apply to any span/heading */
   .gradient-text {
-    background: linear-gradient(135deg, #9333EA 0%, #EC4899 50%, #F97316 100%);
+    background: linear-gradient(135deg, rgb(var(--brand-purple)) 0%, rgb(var(--brand-pink)) 50%, rgb(var(--brand-orange)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -37,7 +53,7 @@
   /* A thin gradient left-border for accents */
   .gradient-left-border {
     border-left: 3px solid transparent;
-    background-image: linear-gradient(white, white), linear-gradient(180deg, #9333EA, #EC4899, #F97316);
+    background-image: linear-gradient(white, white), linear-gradient(180deg, rgb(var(--brand-purple)), rgb(var(--brand-pink)), rgb(var(--brand-orange)));
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
@@ -54,9 +70,14 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #9333EA, #EC4899, #F97316);
+    background: linear-gradient(90deg, rgb(var(--brand-purple)), rgb(var(--brand-pink)), rgb(var(--brand-orange)));
     border-radius: 1px;
   }
+
+  /* Theme-scoped visibility — swap logos between default and alt profiles. */
+  .theme-alt-only { display: none; }
+  .theme-alt .theme-default-only { display: none; }
+  .theme-alt .theme-alt-only { display: revert; }
 
   /* Badge variants */
   .badge {

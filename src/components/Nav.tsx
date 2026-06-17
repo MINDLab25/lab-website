@@ -51,7 +51,13 @@ export default function Nav() {
           <img
             src={`${basePath}/images/mindlab-logo-horizontal.png`}
             alt="MIND Lab"
-            className="h-9 w-auto"
+            className="h-9 w-auto theme-default-only"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/lab-alt-logo.png`}
+            alt="MIND Lab"
+            className="h-9 w-auto theme-alt-only"
           />
         </a>
 

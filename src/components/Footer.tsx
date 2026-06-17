@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { lab } from '@/data/site'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -12,6 +15,10 @@ const navLinks = [
 ]
 
 export default function Footer() {
+  // Keep navigation within the alternate color-profile routes while browsing /alt.
+  const pathname = usePathname()
+  const prefix = pathname.startsWith('/alt') ? '/alt' : ''
+
   return (
     <footer className="border-t border-surface-border bg-white mt-20">
       <div className="container-wide py-12">
@@ -22,7 +29,13 @@ export default function Footer() {
             <img
               src={`${basePath}/images/mindlab-logo-black.png`}
               alt="MIND Lab"
-              className="h-8 w-auto mb-3"
+              className="h-8 w-auto mb-3 theme-default-only"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${basePath}/images/lab-alt-logo.png`}
+              alt="MIND Lab"
+              className="h-8 w-auto mb-3 theme-alt-only"
             />
             <p className="text-sm text-ink-muted leading-relaxed max-w-xs">
               {lab.fullName}
@@ -76,7 +89,7 @@ export default function Footer() {
               {navLinks.map(({ href, label }) => (
                 <li key={href}>
                   <Link
-                    href={href}
+                    href={`${prefix}${href}`}
                     className="text-sm text-ink-muted hover:text-ink transition-colors"
                   >
                     {label}
