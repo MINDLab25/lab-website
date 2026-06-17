@@ -10,6 +10,7 @@ export default function TeamPage() {
   const phd = team.filter((m) => m.role === "phd");
   const ms = team.filter((m) => m.role === "ms");
   const undergrads = team.filter((m) => m.role === "undergrad");
+  const mascots = team.filter((m) => m.role === "mascot");
   const alumni = team.filter((m) => m.role === "alumni");
 
   return (
@@ -62,6 +63,9 @@ export default function TeamPage() {
       {ms.length > 0 && <MemberSection title="MS Students" members={ms} />}
       {undergrads.length > 0 && (
         <MemberSection title="Undergraduate Researchers" members={undergrads} />
+      )}
+      {mascots.length > 0 && (
+        <MemberSection title="Lab Mascots" members={mascots} />
       )}
 
       {/* Alumni */}

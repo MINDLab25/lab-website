@@ -33,7 +33,7 @@ export default function Avatar({
   return (
     <div
       className={`${dim} rounded-full flex items-center justify-center text-white font-semibold shrink-0`}
-      style={{ background: 'linear-gradient(135deg, #9333EA, #EC4899, #F97316)' }}
+      style={{ background: 'linear-gradient(135deg, rgb(var(--brand-purple)), rgb(var(--brand-pink)), rgb(var(--brand-orange)))' }}
     >
       {getInitials(name)}
     </div>

@@ -96,7 +96,14 @@ export const researchAreas = [
 //  TEAM
 // ──────────────────────────────────────────────────────────
 
-export type TeamRole = "pi" | "postdoc" | "phd" | "ms" | "undergrad" | "alumni";
+export type TeamRole =
+  | "pi"
+  | "postdoc"
+  | "phd"
+  | "ms"
+  | "undergrad"
+  | "mascot"
+  | "alumni";
 
 export interface TeamMember {
   id: string;
@@ -231,6 +238,28 @@ Ben's work connects research, teaching, and service around a common thread: how 
     interests: ["[Research Interest]"],
     links: {},
     joinYear: undefined,
+  },
+
+  // ── Lab Mascots ─────────────────────────────────────────
+  {
+    id: "funding",
+    name: "Funding",
+    role: "mascot",
+    title: "Lab Mascot",
+    photo: "funding.png",
+    bio: "Funding is a super-friendly Westie who was born on May 30 in Denver, Colorado. He loves people, food, and slippers.",
+    interests: [],
+    links: {},
+  },
+  {
+    id: "pumpkin",
+    name: "Pumpkin",
+    role: "mascot",
+    title: "Lab Mascot",
+    photo: "pumpkin.png",
+    bio: "Pumpkin is a six-year-old British Shorthair who believes dogs are bad and curiosity didn't kill the cat.",
+    interests: [],
+    links: {},
   },
 ];
 
