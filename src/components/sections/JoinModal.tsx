@@ -76,17 +76,6 @@ export default function JoinModal({ open, onClose }: { open: boolean; onClose: (
               <span className="text-[11px] text-ink-faint group-hover:text-brand-purple transition-colors">LinkedIn</span>
             </a>
           )}
-
-          {lab.twitter && (
-            <a href={lab.twitter} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1.5 group" aria-label="Twitter / X">
-              <span className="w-11 h-11 flex items-center justify-center rounded-full border border-surface-border group-hover:border-brand-purple group-hover:bg-purple-50 transition-all">
-                <svg className="w-5 h-5 text-ink-muted group-hover:text-brand-purple transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </span>
-              <span className="text-[11px] text-ink-faint group-hover:text-brand-purple transition-colors">Twitter</span>
-            </a>
-          )}
         </div>
       </div>
     </div>
