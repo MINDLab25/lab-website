@@ -228,17 +228,17 @@ Ben's work connects research, teaching, and service around a common thread: how 
 
   // ── Undergraduate Researchers ───────────────────────────
   // TODO: replace with real lab members
-  {
-    id: "undergrad-placeholder-1",
-    name: "Undergraduate Researcher (Coming Soon)",
-    role: "undergrad",
-    title: "Undergraduate Researcher",
-    photo: "",
-    bio: "This profile is a placeholder. Real lab member info will be added here soon.",
-    interests: ["[Research Interest]"],
-    links: {},
-    joinYear: undefined,
-  },
+  // {
+  //   id: "undergrad-placeholder-1",
+  //   name: "Undergraduate Researcher (Coming Soon)",
+  //   role: "undergrad",
+  //   title: "Undergraduate Researcher",
+  //   photo: "",
+  //   bio: "This profile is a placeholder. Real lab member info will be added here soon.",
+  //   interests: ["[Research Interest]"],
+  //   links: {},
+  //   joinYear: undefined,
+  // },
 
   // ── Lab Mascots ─────────────────────────────────────────
   {
