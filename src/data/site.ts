@@ -142,13 +142,8 @@ export const team: TeamMember[] = [
     title: "Assistant Professor",
     photo: "xinyi_zhou.png",
     bio: "Xinyi Zhou is an Assistant Professor of Computer Science at Boise State University, where she directs the MIND Lab. She earned her Ph.D. in Computer and Information Science and Engineering from Syracuse University (2022), advised by Reza Zafarani, and completed a postdoctoral fellowship at the University of Washington's Paul G. Allen School of Computer Science & Engineering, working with Amy X. Zhang and Tim Althoff. Her research develops trustworthy, personalized, and socially intelligent AI systems with applications in healthcare, education, and misinformation detection. She was named a Rising Star in EECS by MIT (2024) and a Rising Star in Data Science by UCSD, UChicago, and Stanford (2024).",
-    interests: [
-      "Trustworthy Generative AI",
-      "Personalized LLMs",
-      "Multimodal Machine Learning",
-      "LLM Agents",
-      "Applied AI in Healthcare & Education",
-    ],
+    // PI is involved across all research areas, so no per-area interest tags.
+    interests: [],
     links: {
       email: "xinyizhou@boisestate.edu",
       website: "https://xinyizhou.xyz",
@@ -168,7 +163,10 @@ export const team: TeamMember[] = [
     photoPosition: "center 20%",
     bio: `Ben Peterson is a PhD student in Computer Science in the School of Computing at Boise State University. His research centers on human-centered AI, with a particular focus on AI in education and the design of educational chatbots. He holds a bachelor's degree in Computer Engineering from Brigham Young University.
 Ben's work connects research, teaching, and service around a common thread: how people learn with and about AI. Alongside his doctoral studies, he serves as an IT Systems Administrator in the Computer Science department at Boise State and teaches as an adjunct professor, leading sections of CS 121 and CS 153. Beyond the university, he is Lead Coach for local FIRST Tech Challenge (FTC) and FIRST LEGO League teams, and he serves on the K-12 AI Standards writing committee for the State of Idaho, helping shape how students across the state learn about artificial intelligence.`,
-    interests: ["Human Centered AI"],
+    interests: [
+      "Human–AI Collaboration",
+      "Future of Work, Health, and Education",
+    ],
     links: {
       email: "benjaminpeterson@boisestate.edu",
       github: "https://github.com/blpeter",
@@ -387,8 +385,16 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "transform-seed-grant-2026",
+    date: "2026-06-17",
+    type: "grant",
+    title: "Lab Received Boise State TRANSFORM Seed Grant",
+    description:
+      "Thanks to Boise State University for its support, and congratulations to Xinyi as PI. Our lab will collaborate with the Idaho Policy Institute and the City of Meridian on human-centered AI for real-world impact.",
+  },
+  {
     id: "xinyi-socialllm-icwsm-2026",
-    date: "2026-06-26",
+    date: "2026-05-26",
     type: "event",
     title: "Xinyi Presented at SocialLLM @ ICWSM 2026",
     description:

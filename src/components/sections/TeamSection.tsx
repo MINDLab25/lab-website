@@ -26,16 +26,18 @@ export default function TeamSection() {
               <SocialLinks links={pi.links} />
             </div>
             <p className="text-sm text-ink-secondary leading-relaxed mt-2">{pi.bio}</p>
-            <div className="flex flex-wrap gap-1.5 mt-3">
-              {pi.interests.map((interest) => (
-                <span
-                  key={interest}
-                  className="text-[11px] px-2.5 py-0.5 rounded-full bg-surface border border-surface-border text-ink-muted"
-                >
-                  {interest}
-                </span>
-              ))}
-            </div>
+            {pi.interests.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {pi.interests.map((interest) => (
+                  <span
+                    key={interest}
+                    className="text-[11px] px-2.5 py-0.5 rounded-full bg-surface border border-surface-border text-ink-muted"
+                  >
+                    {interest}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

@@ -42,16 +42,18 @@ export default function TeamPage() {
             <p className="text-sm text-ink-secondary leading-relaxed mt-3">
               {pi.bio}
             </p>
-            <div className="flex flex-wrap gap-1.5 mt-4">
-              {pi.interests.map((i) => (
-                <span
-                  key={i}
-                  className="text-xs px-2.5 py-0.5 rounded-full bg-surface-subtle border border-surface-border text-ink-muted"
-                >
-                  {i}
-                </span>
-              ))}
-            </div>
+            {pi.interests.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-4">
+                {pi.interests.map((i) => (
+                  <span
+                    key={i}
+                    className="text-xs px-2.5 py-0.5 rounded-full bg-surface-subtle border border-surface-border text-ink-muted"
+                  >
+                    {i}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
