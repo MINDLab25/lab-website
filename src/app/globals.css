@@ -5,6 +5,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
+  :root {
+    --ink: 13 13 26;
+    --ink-secondary: 55 65 81;
+    --ink-muted: 107 114 128;
+    --ink-faint: 156 163 175;
+    --surface: 255 255 255;
+    --surface-subtle: 249 250 251;
+    --surface-border: 229 231 235;
+    --surface-border-strong: 209 213 219;
+  }
+
+  .dark {
+    --ink: 244 244 246;
+    --ink-secondary: 199 205 217;
+    --ink-muted: 155 163 180;
+    --ink-faint: 113 119 135;
+    --surface: 22 22 31;
+    --surface-subtle: 13 13 20;
+    --surface-border: 41 41 53;
+    --surface-border-strong: 58 58 72;
+  }
+
   html {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -19,9 +41,10 @@
     @apply font-semibold tracking-tight text-ink;
   }
 
-  /* Smooth scroll for all anchor links */
+  /* Smooth scroll for all anchor links, offset for the sticky nav */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 }
 
@@ -37,7 +60,7 @@
   /* A thin gradient left-border for accents */
   .gradient-left-border {
     border-left: 3px solid transparent;
-    background-image: linear-gradient(white, white), linear-gradient(180deg, #9333EA, #EC4899, #F97316);
+    background-image: linear-gradient(rgb(var(--surface)), rgb(var(--surface))), linear-gradient(180deg, #9333EA, #EC4899, #F97316);
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
@@ -64,27 +87,27 @@
   }
 
   .badge-paper {
-    @apply bg-purple-50 text-purple-700 ring-1 ring-purple-200;
+    @apply bg-purple-50 text-purple-700 ring-1 ring-purple-200 dark:bg-purple-500/15 dark:text-purple-300 dark:ring-purple-400/25;
   }
 
   .badge-award {
-    @apply bg-amber-50 text-amber-700 ring-1 ring-amber-200;
+    @apply bg-amber-50 text-amber-700 ring-1 ring-amber-200 dark:bg-amber-500/15 dark:text-amber-300 dark:ring-amber-400/25;
   }
 
   .badge-grant {
-    @apply bg-green-50 text-green-700 ring-1 ring-green-200;
+    @apply bg-green-50 text-green-700 ring-1 ring-green-200 dark:bg-green-500/15 dark:text-green-300 dark:ring-green-400/25;
   }
 
   .badge-event {
-    @apply bg-blue-50 text-blue-700 ring-1 ring-blue-200;
+    @apply bg-blue-50 text-blue-700 ring-1 ring-blue-200 dark:bg-blue-500/15 dark:text-blue-300 dark:ring-blue-400/25;
   }
 
   .badge-misc {
-    @apply bg-gray-100 text-gray-600 ring-1 ring-gray-200;
+    @apply bg-gray-100 text-gray-600 ring-1 ring-gray-200 dark:bg-gray-500/15 dark:text-gray-300 dark:ring-gray-400/25;
   }
 
   .badge-press {
-    @apply bg-pink-50 text-pink-700 ring-1 ring-pink-200;
+    @apply bg-pink-50 text-pink-700 ring-1 ring-pink-200 dark:bg-pink-500/15 dark:text-pink-300 dark:ring-pink-400/25;
   }
 
   /* Container */

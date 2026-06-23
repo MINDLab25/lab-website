@@ -7,6 +7,7 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -16,16 +17,16 @@ const config: Config = {
           orange: '#F97316',
         },
         ink: {
-          DEFAULT: '#0D0D1A',
-          secondary: '#374151',
-          muted: '#6B7280',
-          faint: '#9CA3AF',
+          DEFAULT: 'rgb(var(--ink) / <alpha-value>)',
+          secondary: 'rgb(var(--ink-secondary) / <alpha-value>)',
+          muted: 'rgb(var(--ink-muted) / <alpha-value>)',
+          faint: 'rgb(var(--ink-faint) / <alpha-value>)',
         },
         surface: {
-          DEFAULT: '#FFFFFF',
-          subtle: '#F9FAFB',
-          border: '#E5E7EB',
-          'border-strong': '#D1D5DB',
+          DEFAULT: 'rgb(var(--surface) / <alpha-value>)',
+          subtle: 'rgb(var(--surface-subtle) / <alpha-value>)',
+          border: 'rgb(var(--surface-border) / <alpha-value>)',
+          'border-strong': 'rgb(var(--surface-border-strong) / <alpha-value>)',
         },
       },
       fontFamily: {

@@ -61,7 +61,7 @@ export default function PublicationsPage() {
               onClick={() => setYearFilter(y as number | 'all')}
               className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
                 yearFilter === y
-                  ? 'bg-ink text-white border-ink'
+                  ? 'bg-ink text-surface border-ink'
                   : 'border-surface-border text-ink-muted hover:text-ink hover:border-surface-border-strong'
               }`}
             >
@@ -79,7 +79,7 @@ export default function PublicationsPage() {
               onClick={() => setTypeFilter(t)}
               className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
                 typeFilter === t
-                  ? 'bg-ink text-white border-ink'
+                  ? 'bg-ink text-surface border-ink'
                   : 'border-surface-border text-ink-muted hover:text-ink hover:border-surface-border-strong'
               }`}
             >

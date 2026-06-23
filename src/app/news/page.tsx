@@ -56,7 +56,7 @@ export default function NewsPage() {
             onClick={() => setFilter(value)}
             className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
               filter === value
-                ? 'bg-ink text-white border-ink'
+                ? 'bg-ink text-surface border-ink'
                 : 'border-surface-border text-ink-muted hover:text-ink hover:border-surface-border-strong'
             }`}
           >
@@ -81,7 +81,7 @@ export default function NewsPage() {
                 {byYear[year].map((item) => (
                   <article
                     key={item.id}
-                    className="flex gap-4 p-5 rounded-xl border border-surface-border bg-white hover:border-surface-border-strong hover:shadow-sm transition-all group"
+                    className="flex gap-4 p-5 rounded-xl border border-surface-border bg-surface hover:border-surface-border-strong hover:shadow-sm transition-all group"
                   >
                     {/* Gradient accent line */}
                     <div className="hidden sm:block w-0.5 shrink-0 rounded-full bg-gradient-to-b from-brand-purple via-brand-pink to-brand-orange opacity-25 group-hover:opacity-80 transition-opacity" />

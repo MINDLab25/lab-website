@@ -13,7 +13,7 @@ export default function PublicationsSection({
   onToggle: (id: string) => void
 }) {
   return (
-    <section id="publications" className="border-t border-surface-border bg-white">
+    <section id="publications" className="border-t border-surface-border bg-surface">
       <div className="container-content py-16 md:py-20">
         <SectionHeading>Publications</SectionHeading>
         <div className="divide-y divide-surface-border">

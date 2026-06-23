@@ -26,7 +26,7 @@ export default function TeamPage() {
         <h2 className="text-xs font-semibold uppercase tracking-widest text-ink-faint mb-6">
           Principal Investigator
         </h2>
-        <div className="p-6 rounded-2xl border border-surface-border bg-white flex flex-col sm:flex-row gap-6">
+        <div className="p-6 rounded-2xl border border-surface-border bg-surface flex flex-col sm:flex-row gap-6">
           <Avatar name={pi.name} photo={pi.photo || undefined} size="lg" />
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-start justify-between gap-3 mb-1.5">
@@ -74,7 +74,7 @@ export default function TeamPage() {
           <h2 className="text-xs font-semibold uppercase tracking-widest text-ink-faint mb-6">
             Alumni
           </h2>
-          <div className="divide-y divide-surface-border border border-surface-border rounded-xl overflow-hidden bg-white">
+          <div className="divide-y divide-surface-border border border-surface-border rounded-xl overflow-hidden bg-surface">
             {alumni.map((member) => (
               <div
                 key={member.id}
@@ -131,7 +131,7 @@ function MemberSection({
         {members.map((member) => (
           <div
             key={member.id}
-            className="p-5 rounded-xl border border-surface-border bg-white hover:border-surface-border-strong hover:shadow-sm transition-all"
+            className="p-5 rounded-xl border border-surface-border bg-surface hover:border-surface-border-strong hover:shadow-sm transition-all"
           >
             <div className="flex items-start gap-4 h-full">
               <Avatar

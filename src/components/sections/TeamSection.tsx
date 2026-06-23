@@ -30,7 +30,7 @@ export default function TeamSection() {
               {pi.interests.map((interest) => (
                 <span
                   key={interest}
-                  className="text-[11px] px-2.5 py-0.5 rounded-full bg-white border border-surface-border text-ink-muted"
+                  className="text-[11px] px-2.5 py-0.5 rounded-full bg-surface border border-surface-border text-ink-muted"
                 >
                   {interest}
                 </span>

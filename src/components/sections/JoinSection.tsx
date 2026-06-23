@@ -4,7 +4,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 export default function JoinSection({ onOpenModal }: { onOpenModal: () => void }) {
   return (
-    <section id="join" className="border-t border-surface-border bg-white">
+    <section id="join" className="border-t border-surface-border bg-surface">
       <div className="container-content py-20 text-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

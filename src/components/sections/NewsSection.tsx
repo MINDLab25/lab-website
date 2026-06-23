@@ -20,14 +20,14 @@ export default function NewsSection({
 }) {
   const visibleNews = expanded ? sortedNews : sortedNews.slice(0, MAX_HOME_NEWS)
   return (
-    <section id="news" className="bg-white">
+    <section id="news" className="bg-surface">
       <div className="container-content py-16 md:py-20">
         <SectionHeading>News</SectionHeading>
         <div className="space-y-3">
           {visibleNews.map((item) => (
             <article
               key={item.id}
-              className="flex gap-4 p-4 rounded-xl border border-surface-border bg-white hover:border-surface-border-strong hover:shadow-sm transition-all group"
+              className="flex gap-4 p-4 rounded-xl border border-surface-border bg-surface hover:border-surface-border-strong hover:shadow-sm transition-all group"
             >
               <div className="hidden sm:block w-0.5 shrink-0 self-stretch rounded-full bg-gradient-to-b from-brand-purple via-brand-pink to-brand-orange opacity-20 group-hover:opacity-70 transition-opacity" />
               <div className="flex-1 min-w-0">
@@ -52,7 +52,7 @@ export default function NewsSection({
               type="button"
               onClick={onToggle}
               aria-expanded={expanded}
-              className="inline-flex items-center gap-1.5 rounded-full border border-surface-border bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:border-surface-border-strong hover:shadow-sm transition-all"
+              className="inline-flex items-center gap-1.5 rounded-full border border-surface-border bg-surface px-5 py-2.5 text-sm font-semibold text-ink hover:border-surface-border-strong hover:shadow-sm transition-all"
             >
               {expanded
                 ? 'Show less'

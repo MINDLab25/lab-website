@@ -8,27 +8,27 @@ const categoryConfig: Record<ResourceCategory, { label: string; icon: string; co
   dataset: {
     label: 'Dataset',
     icon: '🗄️',
-    color: 'bg-blue-50 text-blue-700 ring-1 ring-blue-200',
+    color: 'bg-blue-50 text-blue-700 ring-1 ring-blue-200 dark:bg-blue-500/15 dark:text-blue-300 dark:ring-blue-400/25',
   },
   code: {
     label: 'Code',
     icon: '💻',
-    color: 'bg-gray-100 text-gray-700 ring-1 ring-gray-200',
+    color: 'bg-gray-100 text-gray-700 ring-1 ring-gray-200 dark:bg-gray-500/15 dark:text-gray-300 dark:ring-gray-400/25',
   },
   'reading-list': {
     label: 'Reading List',
     icon: '📚',
-    color: 'bg-amber-50 text-amber-700 ring-1 ring-amber-200',
+    color: 'bg-amber-50 text-amber-700 ring-1 ring-amber-200 dark:bg-amber-500/15 dark:text-amber-300 dark:ring-amber-400/25',
   },
   tutorial: {
     label: 'Tutorial',
     icon: '📖',
-    color: 'bg-green-50 text-green-700 ring-1 ring-green-200',
+    color: 'bg-green-50 text-green-700 ring-1 ring-green-200 dark:bg-green-500/15 dark:text-green-300 dark:ring-green-400/25',
   },
   tool: {
     label: 'Tool',
     icon: '🔧',
-    color: 'bg-purple-50 text-purple-700 ring-1 ring-purple-200',
+    color: 'bg-purple-50 text-purple-700 ring-1 ring-purple-200 dark:bg-purple-500/15 dark:text-purple-300 dark:ring-purple-400/25',
   },
 }
 
@@ -65,7 +65,7 @@ export default function ResourcesPage() {
             onClick={() => setFilter(value)}
             className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
               filter === value
-                ? 'bg-ink text-white border-ink'
+                ? 'bg-ink text-surface border-ink'
                 : 'border-surface-border text-ink-muted hover:text-ink hover:border-surface-border-strong'
             }`}
           >
@@ -85,7 +85,7 @@ export default function ResourcesPage() {
             return (
               <article
                 key={resource.id}
-                className="group p-5 rounded-xl border border-surface-border bg-white hover:border-surface-border-strong hover:shadow-sm transition-all flex flex-col"
+                className="group p-5 rounded-xl border border-surface-border bg-surface hover:border-surface-border-strong hover:shadow-sm transition-all flex flex-col"
               >
                 {/* Header row */}
                 <div className="flex items-start justify-between gap-3 mb-3">

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import ThemeToggle from '@/components/ThemeToggle'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
@@ -31,6 +32,14 @@ export default function Nav() {
           current = id
         }
       }
+      // At the bottom of the page the last section may be shorter than the
+      // viewport and never cross the threshold — force it active.
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2
+      if (atBottom) {
+        current = sectionIds[sectionIds.length - 1]
+      }
       setActiveSection(current)
     }
 
@@ -40,7 +49,7 @@ export default function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white/90 backdrop-blur-md transition-shadow duration-200 ${
+      className={`sticky top-0 z-50 bg-surface/90 backdrop-blur-md transition-shadow duration-200 ${
         scrolled ? 'shadow-sm border-b border-surface-border' : 'border-b border-transparent'
       }`}
     >
@@ -51,7 +60,13 @@ export default function Nav() {
           <img
             src={`${basePath}/images/mindlab-logo-horizontal.png`}
             alt="MIND Lab"
-            className="h-9 w-auto"
+            className="h-9 w-auto block dark:hidden"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/mind-lab-inverted-color.png`}
+            alt="MIND Lab"
+            className="h-9 w-auto hidden dark:block"
           />
         </a>
 
@@ -79,14 +94,17 @@ export default function Nav() {
               </a>
             )
           })}
+          <ThemeToggle className="ml-1" />
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-md text-ink-muted hover:text-ink hover:bg-surface-subtle transition-colors"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-        >
+        {/* Mobile controls */}
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 rounded-md text-ink-muted hover:text-ink hover:bg-surface-subtle transition-colors"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          >
           {menuOpen ? (
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M4 4l12 12M16 4L4 16" />
@@ -96,12 +114,13 @@ export default function Nav() {
               <path d="M3 6h14M3 10h14M3 14h14" />
             </svg>
           )}
-        </button>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-surface-border bg-white px-4 pb-4 pt-2">
+        <div className="md:hidden border-t border-surface-border bg-surface px-4 pb-4 pt-2">
           {links.map(({ href, label }) => {
             const id = href.replace('#', '')
             const isActive = activeSection === id
