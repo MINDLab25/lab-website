@@ -1,12 +1,17 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
+
+// Runs before paint on the client; falls back to useEffect during SSR/prerender
+// so the static export doesn't log a useLayoutEffect warning.
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export default function ThemeToggle({ className = '' }: { className?: string }) {
   const [isDark, setIsDark] = useState(false)
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     setMounted(true)
 
     // Re-assert the theme from the source of truth (stored choice → system),
