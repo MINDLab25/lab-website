@@ -8,7 +8,17 @@ export default function ThemeToggle({ className = '' }: { className?: string }) 
 
   useEffect(() => {
     setMounted(true)
-    setIsDark(document.documentElement.classList.contains('dark'))
+
+    // Re-assert the theme from the source of truth (stored choice → system),
+    // since React hydration can reset the class the pre-paint script applied.
+    let stored: string | null = null
+    try {
+      stored = localStorage.getItem('theme')
+    } catch {}
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const dark = stored ? stored === 'dark' : systemDark
+    document.documentElement.classList.toggle('dark', dark)
+    setIsDark(dark)
 
     // Follow the OS preference live, until the user explicitly picks a theme.
     const mq = window.matchMedia('(prefers-color-scheme: dark)')
