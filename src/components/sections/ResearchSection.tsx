@@ -7,7 +7,7 @@ export default function ResearchSection() {
     <section id="research" className="border-t border-surface-border">
       <div className="container-content py-16 md:py-20">
         <SectionHeading>Research</SectionHeading>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {researchAreas.map((area) => {
             const areaMembers = (area.memberIds ?? [])
               .map((id) => team.find((m) => m.id === id))

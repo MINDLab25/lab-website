@@ -138,6 +138,7 @@ function MemberSection({
                 name={member.name}
                 photo={member.photo || undefined}
                 size="md"
+                photoPosition={member.photoPosition}
               />
               <div className="flex-1 min-w-0 flex flex-col">
                 <div className="flex items-start justify-between gap-2">

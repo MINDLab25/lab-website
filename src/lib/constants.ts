@@ -12,7 +12,7 @@ export const newsTypeLabel: Record<string, string> = {
   award: 'Award',
   grant: 'Grant',
   event: 'Event',
-  misc: 'News',
+  misc: 'Announcement',
   press: 'Press',
 }
 
@@ -29,7 +29,7 @@ export const newsTypeKicker: Record<string, { dot: string; text: string }> = {
   award: { dot: 'bg-amber-500', text: 'text-amber-600' },
   grant: { dot: 'bg-green-500', text: 'text-green-600' },
   event: { dot: 'bg-blue-500', text: 'text-blue-600' },
-  misc: { dot: 'bg-gray-400', text: 'text-gray-500' },
+  misc: { dot: 'bg-orange-500', text: 'text-orange-600' },
   press: { dot: 'bg-pink-500', text: 'text-pink-600' },
 }
 

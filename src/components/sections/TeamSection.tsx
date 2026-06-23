@@ -3,11 +3,10 @@ import SectionHeading from '@/components/SectionHeading'
 import Avatar from '@/components/Avatar'
 import SocialLinks from '@/components/SocialLinks'
 import BioExpand from '@/components/BioExpand'
-import { MascotBanner, MascotPolaroids } from '@/components/sections/MascotsSection'
 
 const currentMembers = team.filter((m) => m.role !== 'alumni')
 const pi = currentMembers.find((m) => m.role === 'pi')!
-const members = currentMembers.filter((m) => m.role !== 'pi' && m.role !== 'mascot')
+const members = currentMembers.filter((m) => m.role !== 'pi')
 
 export default function TeamSection() {
   return (
@@ -48,8 +47,8 @@ export default function TeamSection() {
               id={`member-${member.id}`}
               className="p-5 rounded-xl border border-surface-border hover:border-surface-border-strong hover:shadow-sm transition-all flex flex-col"
             >
-              <div className="flex items-start gap-3 mb-3">
-                <Avatar name={member.name} photo={member.photo || undefined} size="md" />
+              <div className="flex items-center gap-3 mb-3">
+                <Avatar name={member.name} photo={member.photo || undefined} size="md" photoPosition={member.photoPosition} />
                 <div className="min-w-0 flex-1">
                   <h3 className="font-semibold text-ink text-sm leading-tight">{member.name}</h3>
                   <p className="text-xs text-ink-muted mt-0.5">{member.title}</p>
@@ -72,17 +71,6 @@ export default function TeamSection() {
             </div>
           ))}
         </div>
-
-        {/* Lab mascots — comparing two styles; we'll keep the one you like */}
-        <p className="mt-14 mb-4 text-xs uppercase tracking-widest text-ink-faint">
-          Option A — Gradient banner
-        </p>
-        <MascotBanner />
-
-        <p className="mt-12 mb-4 text-xs uppercase tracking-widest text-ink-faint">
-          Option B — Tilted polaroids
-        </p>
-        <MascotPolaroids />
       </div>
     </section>
   )

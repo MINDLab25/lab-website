@@ -10,13 +10,7 @@ export default function JoinSection({ onOpenModal }: { onOpenModal: () => void }
         <img
           src={`${basePath}/images/mindlab-logo-symbol.png`}
           alt=""
-          className="w-12 h-12 mx-auto mb-5 opacity-90 theme-default-only"
-        />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`${basePath}/images/lab-alt-logo.png`}
-          alt=""
-          className="w-12 h-12 mx-auto mb-5 opacity-90 theme-alt-only"
+          className="w-12 h-12 mx-auto mb-5 opacity-90"
         />
         <h2 className="text-2xl font-semibold mb-3">Interested in Joining?</h2>
         <div className="text-ink-muted max-w-xl mx-auto mb-6 leading-relaxed space-y-3">

@@ -113,6 +113,8 @@ export interface TeamMember {
   title: string;
   /** Filename inside /public/images/team/ — leave "" to show initials avatar */
   photo: string;
+  /** CSS object-position for the avatar crop (e.g. "center 20%") — defaults to centered */
+  photoPosition?: string;
   bio: string;
   interests: string[];
   links: {
@@ -137,8 +139,8 @@ export const team: TeamMember[] = [
     id: "xinyi-zhou",
     name: "Xinyi Zhou",
     role: "pi",
-    title: "Assistant Professor of Computer Science",
-    photo: "",
+    title: "Assistant Professor",
+    photo: "xinyi_zhou.png",
     bio: "Xinyi Zhou is an Assistant Professor of Computer Science at Boise State University, where she directs the MIND Lab. She earned her Ph.D. in Computer and Information Science and Engineering from Syracuse University (2022), advised by Reza Zafarani, and completed a postdoctoral fellowship at the University of Washington's Paul G. Allen School of Computer Science & Engineering, working with Amy X. Zhang and Tim Althoff. Her research develops trustworthy, personalized, and socially intelligent AI systems with applications in healthcare, education, and misinformation detection. She was named a Rising Star in EECS by MIT (2024) and a Rising Star in Data Science by UCSD, UChicago, and Stanford (2024).",
     interests: [
       "Trustworthy Generative AI",
@@ -161,8 +163,9 @@ export const team: TeamMember[] = [
     id: "benjamin-lee-peterson",
     name: "Benjamin Lee Peterson",
     role: "phd",
-    title: "PhD Student in Computer Science",
-    photo: "",
+    title: "PhD Student",
+    photo: "peterson_ben.jpg",
+    photoPosition: "center 20%",
     bio: `Ben Peterson is a PhD student in Computer Science in the School of Computing at Boise State University. His research centers on human-centered AI, with a particular focus on AI in education and the design of educational chatbots. He holds a bachelor's degree in Computer Engineering from Brigham Young University.
 Ben's work connects research, teaching, and service around a common thread: how people learn with and about AI. Alongside his doctoral studies, he serves as an IT Systems Administrator in the Computer Science department at Boise State and teaches as an adjunct professor, leading sections of CS 121 and CS 153. Beyond the university, he is Lead Coach for local FIRST Tech Challenge (FTC) and FIRST LEGO League teams, and he serves on the K-12 AI Standards writing committee for the State of Idaho, helping shape how students across the state learn about artificial intelligence.`,
     interests: ["Human Centered AI"],
@@ -179,8 +182,9 @@ Ben's work connects research, teaching, and service around a common thread: how 
     id: "stephanie-grim",
     name: "Stephanie Grim",
     role: "phd",
-    title: "PhD Student in Computer Science",
-    photo: "",
+    title: "PhD Student (Fall 2026)",
+    photo: "stephanie-grim.jpg",
+    photoPosition: "center 20%",
     bio: 'Stephanie joins the lab as an incoming PhD student with over a decade of experience in human subjects and healthcare research. She has worked closely with patients, clinicians, and research teams, seeing firsthand how health technologies are used in practice. She hopes to draw on this experience in her work on machine learning and human-centered AI, particularly in understanding how tools such as large language models can be developed and implemented in ways that support patients, clinicians, and health systems. She is excited about combining rigorous yet responsible research methods with practical healthcare needs. Outside of research, Stephanie is an avid outdoorsperson who spends much of her free time snowboarding, trail running, and mountain biking. She also loves animals and frequently fosters rescue puppies while they wait for their "furever" homes. ',
     interests: ["Future of Work, Health, and Education"],
     links: {
@@ -198,10 +202,10 @@ Ben's work connects research, teaching, and service around a common thread: how 
     id: "anh-bui",
     name: "Anh Bui",
     role: "ms",
-    title: "MS Student in Computer Science",
-    photo: "",
+    title: "MS Student",
+    photo: "anh_bui.png",
     bio: "This profile is a placeholder. Real lab member info will be added here soon.",
-    interests: ["[Trust and Safety]"],
+    interests: ["Trust and Safety"],
     links: {
       email: "buianh1108@gmail.com",
       linkedin: "https://www.linkedin.com/in/anh-bui-b527b211b/",
@@ -212,8 +216,8 @@ Ben's work connects research, teaching, and service around a common thread: how 
     id: "prabal-shrestha",
     name: "Prabal Shrestha",
     role: "ms",
-    title: "MS Student in Computer Science",
-    photo: "",
+    title: "MS Student",
+    photo: "prabal_shrestha.png",
     bio: "MS CS student at Boise State University researching multimodal LLMs, video-based fact-checking, and LLM-powered human simulation. Interested in how AI systems perceive and reason about video content, and in building systems that leverage language and vision models for real-world information integrity.",
     interests: ["Human–AI Collaboration", "Multimodality"],
     links: {

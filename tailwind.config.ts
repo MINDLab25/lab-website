@@ -11,9 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          purple: 'rgb(var(--brand-purple) / <alpha-value>)',
-          pink: 'rgb(var(--brand-pink) / <alpha-value>)',
-          orange: 'rgb(var(--brand-orange) / <alpha-value>)',
+          purple: '#9333EA',
+          pink: '#EC4899',
+          orange: '#F97316',
         },
         ink: {
           DEFAULT: '#0D0D1A',

@@ -40,9 +40,7 @@ export default function JoinModal({ open, onClose }: { open: boolean; onClose: (
 
         {/* Logo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={`${basePath}/images/mindlab-logo-symbol.png`} alt="" className="w-10 h-10 mb-4 opacity-90 theme-default-only" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={`${basePath}/images/lab-alt-logo.png`} alt="" className="w-10 h-10 mb-4 opacity-90 theme-alt-only" />
+        <img src={`${basePath}/images/mindlab-logo-symbol.png`} alt="" className="w-10 h-10 mb-4 opacity-90" />
 
         <h3 className="text-lg font-semibold text-ink mb-1">Get in Touch</h3>
         <p className="text-sm text-ink-muted mb-6 leading-relaxed">

@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import Nav from '@/components/Nav'
-import ThemeController from '@/components/ThemeController'
 import { lab } from '@/data/site'
 
 export const metadata: Metadata = {
@@ -23,17 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Apply the alternate color profile before first paint on /alt routes
-            to avoid a flash of the default palette on hard navigation. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(/\\/alt(\\/|$)/.test(location.pathname)){document.documentElement.classList.add('theme-alt')}}catch(e){}})()`,
-          }}
-        />
-      </head>
       <body className="min-h-screen flex flex-col">
-        <ThemeController />
         <Nav />
         <main className="flex-1">{children}</main>
         <Script id="marker-io" strategy="afterInteractive">{`

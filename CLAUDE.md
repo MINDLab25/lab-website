@@ -36,8 +36,8 @@ There are no tests. The build output is a fully static site in `out/` (Next.js `
 
 **Cross-linking via IDs:** `researchAreas[].memberIds` references `team[].id`. `home.featuredPublicationIds` and `home.featuredNewsIds` reference IDs in `publications` and `news`. Broken IDs fail silently (filtered out with `.filter(Boolean)`).
 
-**Team photos:** Place square images (≥ 400×400 px) in `public/images/team/` named `firstname-lastname.jpg`. Set the member's `photo` field in `site.ts`. An empty string `""` renders a gradient initials avatar instead.
+**Team photos:** Place square images (≥ 400×400 px) in `public/images/team/`. The member's `photo` field in `site.ts` holds the exact filename including extension (e.g. `xinyi_zhou.png`, `peterson_ben.jpg`, `stephanie-grim.jpg`) — there is no enforced naming convention and both `.png`/`.jpg` are in use. An empty string `""` renders a gradient initials avatar instead. `Avatar` (`src/components/Avatar.tsx`) has three sizes: `lg` (PI card), `md` (student/mascot cards), `sm` (alumni rows).
 
-**Lab member bolding:** Author names in publications are bolded automatically if the name exactly matches a `team[].name` value (`labMemberNames` in `src/lib/utils.ts`).
+**Mascots:** Lab mascots are ordinary `team` entries with `role: "mascot"` and empty `interests: []` / `links: {}`. They render as regular member cards — folded into the general grid in the home `TeamSection`, and shown as a "Lab Mascots" group on the `/team` page. There is no separate mascot component or section.
 
-**`'use client'` boundary:** Only `src/app/page.tsx` and `src/components/sections/JoinModal.tsx` need `'use client'`. All other section and shared components are pure render — do not add `'use client'` to them unless they require local state or browser APIs.
+**`'use client'` boundary:** The client components are `src/app/page.tsx` (modal/expand state), `src/components/Nav.tsx` (scroll + active-section tracking), `src/components/sections/JoinModal.tsx` (Escape-key effect), and the `/news`, `/publications`, `/resources` route pages (filter/expand state). The `/team` page and all other section/shared components are pure render — do not add `'use client'` to them unless they require local state or browser APIs.
