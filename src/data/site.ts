@@ -140,8 +140,8 @@ export const team: TeamMember[] = [
     name: "Xinyi Zhou",
     role: "pi",
     title: "Assistant Professor",
-    photo: "xinyi_zhou.png",
-    bio: "Xinyi Zhou is an Assistant Professor of Computer Science at Boise State University, where she directs the MIND Lab. She earned her Ph.D. in Computer and Information Science and Engineering from Syracuse University (2022), advised by Reza Zafarani, and completed a postdoctoral fellowship at the University of Washington's Paul G. Allen School of Computer Science & Engineering, working with Amy X. Zhang and Tim Althoff. Her research develops trustworthy, personalized, and socially intelligent AI systems with applications in healthcare, education, and misinformation detection. She was named a Rising Star in EECS by MIT (2024) and a Rising Star in Data Science by UCSD, UChicago, and Stanford (2024).",
+    photo: "xinyi_zhou.jpg",
+    bio: "Xinyi Zhou is an Assistant Professor of Computer Science at Boise State University, where she directs the MIND Lab. She was previously a postdoctoral scholar at the University of Washington and earned her PhD from Syracuse University. Her research spans machine learning, data mining, and human-centered AI, with work published in leading venues, featured in the media, and cited 6,000+ times. She has collaborated broadly across academia and industry to drive real-world impact and has been recognized as an MIT EECS Rising Star and a UCSD/UChicago/Stanford Rising Star in Data Science.",
     // PI is involved across all research areas, so no per-area interest tags.
     interests: [],
     links: {
@@ -180,10 +180,10 @@ Ben's work connects research, teaching, and service around a common thread: how 
     id: "stephanie-grim",
     name: "Stephanie Grim",
     role: "phd",
-    title: "PhD Student (Fall 2026)",
+    title: "PhD Student",
     photo: "stephanie-grim.jpg",
     photoPosition: "center 20%",
-    bio: 'Stephanie joins the lab as an incoming PhD student with over a decade of experience in human subjects and healthcare research. She has worked closely with patients, clinicians, and research teams, seeing firsthand how health technologies are used in practice. She hopes to draw on this experience in her work on machine learning and human-centered AI, particularly in understanding how tools such as large language models can be developed and implemented in ways that support patients, clinicians, and health systems. She is excited about combining rigorous yet responsible research methods with practical healthcare needs. Outside of research, Stephanie is an avid outdoorsperson who spends much of her free time snowboarding, trail running, and mountain biking. She also loves animals and frequently fosters rescue puppies while they wait for their "furever" homes. ',
+    bio: 'Stephanie joins the lab as an incoming PhD student starting in Fall 2026 with over a decade of experience in human subjects and healthcare research. She has worked closely with patients, clinicians, and research teams, seeing firsthand how health technologies are used in practice. She hopes to draw on this experience in her work on machine learning and human-centered AI, particularly in understanding how tools such as large language models can be developed and implemented in ways that support patients, clinicians, and health systems. She is excited about combining rigorous yet responsible research methods with practical healthcare needs. Outside of research, Stephanie is an avid outdoorsperson who spends much of her free time snowboarding, trail running, and mountain biking. She also loves animals and frequently fosters rescue puppies while they wait for their "furever" homes. ',
     interests: ["Future of Work, Health, and Education"],
     links: {
       email: "stephgrim@gmail.com",
@@ -200,7 +200,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
     id: "anh-bui",
     name: "Anh Bui",
     role: "ms",
-    title: "MS Student",
+    title: "Summer Intern",
     photo: "anh_bui.jpg",
     bio: "Anh is an MSCS student at Boise State University, working on trustworthy and reliable AI. Her current research centers on memory in agentic AI: how it shapes AI safety in real-world scenarios, why those effects arise, and how we could build memory systems that not only improve performance but also keep agents safe. In her spare time, she enjoys climbing and bouldering - and is still learning how to trust her feet.",
     interests: ["Trust and Safety"],
@@ -215,7 +215,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
     id: "prabal-shrestha",
     name: "Prabal Shrestha",
     role: "ms",
-    title: "MS Student",
+    title: "Master Student",
     photo: "prabal_shrestha.png",
     bio: "MS CS student at Boise State University researching multimodal LLMs, video-based fact-checking, and LLM-powered human simulation. Interested in how AI systems perceive and reason about video content, and in building systems that leverage language and vision models for real-world information integrity.",
     interests: ["Human–AI Collaboration", "Multimodality"],
@@ -250,7 +250,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
     role: "mascot",
     title: "Lab Mascot",
     photo: "funding.png",
-    bio: "Funding is a super-friendly Westie who was born on May 30 in Denver, Colorado. He loves people, food, and slippers.",
+    bio: "Funding is a super-friendly Westie who was born on May 30, 2026 in Denver, Colorado. He loves people, food, and slippers.",
     interests: [],
     links: {},
   },
@@ -380,8 +380,6 @@ export interface NewsItem {
   description: string;
   /** Optional URL for a single "Learn more" link */
   link?: string;
-  /** Optional named links (e.g. Paper, Slides, Poster) rendered side-by-side */
-  links?: { label: string; url: string }[];
 }
 
 export const news: NewsItem[] = [
@@ -400,20 +398,7 @@ export const news: NewsItem[] = [
     title: "Xinyi Presented at SocialLLM @ ICWSM 2026",
     description:
       'Xinyi presented "Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation" at the Large Language Models for Social Reasoning and Simulation Workshop at ICWSM 2026 in Los Angeles, CA. Check out our paper, slides, and poster!',
-    links: [
-      {
-        label: "Paper",
-        url: "https://arxiv.org/abs/2606.07541",
-      },
-      {
-        label: "Slides",
-        url: "https://drive.google.com/file/d/1LdIbn39RRcgDTZu4c0BM28TajSaxS1vy/view?usp=drive_link",
-      },
-      {
-        label: "Poster",
-        url: "https://drive.google.com/file/d/1OGv12vCDLkVxIIPibSXjo7UF9rgBf4Yx/view?usp=drive_link",
-      },
-    ],
+    link: "https://arxiv.org/abs/2606.07541",
   },
   {
     id: "xinyi-ai-institute-2026",
