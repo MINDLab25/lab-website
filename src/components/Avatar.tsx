@@ -6,6 +6,7 @@ const sizeClass = {
   lg: 'w-20 h-20 text-xl',
   md: 'w-16 h-16 text-base',
   sm: 'w-8 h-8 text-xs',
+  xs: 'w-6 h-6 text-[10px]',
 }
 
 export default function Avatar({
@@ -16,7 +17,7 @@ export default function Avatar({
 }: {
   name: string
   photo?: string
-  size?: 'lg' | 'md' | 'sm'
+  size?: 'lg' | 'md' | 'sm' | 'xs'
   /** CSS object-position for the photo (e.g. "center 20%") — defaults to centered */
   photoPosition?: string
 }) {
