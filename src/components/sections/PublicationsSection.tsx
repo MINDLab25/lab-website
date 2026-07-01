@@ -28,7 +28,7 @@ export default function PublicationsSection({
                       <span className={`badge ${pubTypeBadgeClass[pub.type]} text-[11px]`}>
                         {pubTypeLabel[pub.type]}
                       </span>
-                      <span className="text-xs text-ink-faint">{pub.year}</span>
+                      {pub.type !== 'preprint' && <span className="text-xs text-ink-faint">{pub.year}</span>}
                       {pub.award && (
                         <span className="badge badge-award text-[11px]">{pub.award}</span>
                       )}
