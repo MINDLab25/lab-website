@@ -1,6 +1,5 @@
 import { researchAreas, team } from '@/data/site'
 import SectionHeading from '@/components/SectionHeading'
-import { getDisplayFirstName } from '@/lib/utils'
 
 export default function ResearchSection() {
   return (
@@ -21,15 +20,17 @@ export default function ResearchSection() {
                 <h3 className="font-semibold text-ink mb-1.5">{area.title}</h3>
                 <p className="text-sm text-ink-muted leading-relaxed flex-1">{area.description}</p>
                 {areaMembers.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-surface-border flex flex-wrap gap-x-3 gap-y-1.5">
-                    {areaMembers.map((member) => (
-                      <a
-                        key={member.id}
-                        href={`#member-${member.id}`}
-                        className="text-xs text-ink-muted hover:text-brand-purple transition-colors"
-                      >
-                        {getDisplayFirstName(member.name)}
-                      </a>
+                  <div className="mt-4 pt-4 border-t border-surface-border flex flex-wrap items-center gap-y-1.5">
+                    {areaMembers.map((member, i) => (
+                      <span key={member.id} className="inline-flex items-center">
+                        {i > 0 && <span className="text-ink-faint mx-2">·</span>}
+                        <a
+                          href={`#member-${member.id}`}
+                          className="text-xs text-ink-muted hover:text-brand-purple transition-colors"
+                        >
+                          {member.name}
+                        </a>
+                      </span>
                     ))}
                   </div>
                 )}
