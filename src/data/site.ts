@@ -221,8 +221,8 @@ Ben's work connects research, teaching, and service around a common thread: how 
     interests: ["Human–AI Collaboration", "Multimodality"],
     links: {
       email: "prabalshrestha2@gmail.com",
-      github: "github.com/prabalshrestha",
-      linkedin: "linkedin.com/in/prabalshrestha",
+      github: "https://github.com/prabalshrestha",
+      linkedin: "https://www.linkedin.com/in/prabalshrestha",
       googleScholar:
         "https://scholar.google.com/citations?user=a5BsiBIAAAAJ&hl=en",
     },
