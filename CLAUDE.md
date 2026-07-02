@@ -19,7 +19,7 @@ There are no tests. The build output is a fully static site in `out/` (Next.js `
 
 **Single data file:** All site content lives in `src/data/site.ts`. Every exported constant (`lab`, `home`, `team`, `publications`, `news`, `researchAreas`, `resources`) is consumed directly by page components. To add or update content, only edit this file.
 
-**Component structure:** The home page (`src/app/page.tsx`) is a thin coordinator (~30 lines) that owns modal/expand state and composes section components from `src/components/sections/`. Each section reads data from `site.ts` directly — no prop drilling of data. The four route pages (`/news`, `/team`, `/publications`, `/resources`) are standalone under `src/app/`.
+**Component structure:** The home page (`src/app/page.tsx`) is a thin coordinator (~30 lines) that owns expand state and composes section components from `src/components/sections/`. Each section reads data from `site.ts` directly — no prop drilling of data. The four route pages (`/news`, `/team`, `/publications`, `/resources`) are standalone under `src/app/`.
 
 **Shared utilities:**
 - `src/lib/utils.ts` — `getInitials`, `getDisplayFirstName`, `formatDate(iso, 'short'|'long')`, `labMemberNames` Set
@@ -30,7 +30,7 @@ There are no tests. The build output is a fully static site in `out/` (Next.js `
 
 **Static export + GitHub Pages:** `next.config.mjs` sets `output: 'export'` with `trailingSlash: true`. The `basePath` and `assetPrefix` are driven by the `NEXT_PUBLIC_BASE_PATH` env var (set to `/lab-website` in `.github/workflows/deploy.yml`). All image `src` attributes must use `${basePath}/images/...` — never use Next.js `<Image>` as images are unoptimized.
 
-**Join modal:** Triggered from three places — Nav "Join Us" (dispatches `open-join-modal` custom event), Hero inline link, and the Join section button. The custom event is listened to in `page.tsx`. Modal logic lives in `src/components/sections/JoinModal.tsx` (`'use client'`, owns Escape-key effect). The email icon links to `lab.joinLink`, which is a Gmail compose URL (not `mailto:`) for reliable cross-browser behavior.
+**Join flow:** Nav "Join Us" and the Hero inline link are plain `#join` anchors that scroll to `JoinSection`. Its "Email Us" button links directly to `lab.joinLink`, a Gmail compose URL (not `mailto:`), for reliable cross-browser behavior. There is no modal.
 
 **Design tokens:** Custom colors and typography are defined in `tailwind.config.ts` under `brand.*`, `ink.*`, and `surface.*`. Reusable utility classes (`.badge`, `.badge-*`, `.container-content`, `.gradient-text`) are defined in `src/app/globals.css` under `@layer utilities`.
 
@@ -40,4 +40,4 @@ There are no tests. The build output is a fully static site in `out/` (Next.js `
 
 **Mascots:** Lab mascots are ordinary `team` entries with `role: "mascot"` and empty `interests: []` / `links: {}`. They render as regular member cards — folded into the general grid in the home `TeamSection`, and shown as a "Lab Mascots" group on the `/team` page. There is no separate mascot component or section.
 
-**`'use client'` boundary:** The client components are `src/app/page.tsx` (modal/expand state), `src/components/Nav.tsx` (scroll + active-section tracking), `src/components/sections/JoinModal.tsx` (Escape-key effect), and the `/news`, `/publications`, `/resources` route pages (filter/expand state). The `/team` page and all other section/shared components are pure render — do not add `'use client'` to them unless they require local state or browser APIs.
+**`'use client'` boundary:** The client components are `src/app/page.tsx` (expand state), `src/components/Nav.tsx` (scroll + active-section tracking), and the `/news`, `/publications`, `/resources` route pages (filter/expand state). The `/team` page and all other section/shared components are pure render — do not add `'use client'` to them unless they require local state or browser APIs.

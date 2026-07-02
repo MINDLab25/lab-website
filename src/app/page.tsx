@@ -7,12 +7,10 @@ import ResearchSection from '@/components/sections/ResearchSection'
 import PublicationsSection from '@/components/sections/PublicationsSection'
 import TeamSection from '@/components/sections/TeamSection'
 import JoinSection from '@/components/sections/JoinSection'
-import JoinModal from '@/components/sections/JoinModal'
 
 export default function Page() {
   const [expandedPub, setExpandedPub] = useState<string | null>(null)
   const [newsExpanded, setNewsExpanded] = useState(false)
-  const [joinModalOpen, setJoinModalOpen] = useState(false)
 
   return (
     <>
@@ -27,8 +25,7 @@ export default function Page() {
         onToggle={(id) => setExpandedPub(expandedPub === id ? null : id)}
       />
       <TeamSection />
-      <JoinSection onOpenModal={() => setJoinModalOpen(true)} />
-      <JoinModal open={joinModalOpen} onClose={() => setJoinModalOpen(false)} />
+      <JoinSection />
     </>
   )
 }
