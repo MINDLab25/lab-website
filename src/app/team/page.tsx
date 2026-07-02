@@ -158,11 +158,11 @@ function MemberSection({
                   </div>
                 </div>
                 <BioExpand bio={member.bio} className="mt-2.5" />
-                <div className="flex flex-wrap gap-1 mt-auto pt-2.5">
+                <div className="flex flex-wrap gap-1.5 mt-auto pt-2.5">
                   {member.interests.map((i) => (
                     <span
                       key={i}
-                      className="text-[11px] px-2 py-0.5 rounded-full bg-surface-subtle border border-surface-border text-ink-muted"
+                      className="text-xs px-2.5 py-0.5 rounded-full bg-surface-subtle border border-surface-border text-ink-muted"
                     >
                       {i}
                     </span>

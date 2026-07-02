@@ -59,12 +59,6 @@ export default function JoinModal({ open, onClose }: { open: boolean; onClose: (
           </svg>
           Email Us
         </a>
-        <a
-          href={`mailto:${lab.email}`}
-          className="mt-3 text-xs text-ink-faint hover:text-ink transition-colors"
-        >
-          {lab.email}
-        </a>
       </div>
     </div>
   )

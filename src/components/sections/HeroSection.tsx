@@ -1,10 +1,6 @@
 import { lab } from "@/data/site";
 
-export default function HeroSection({
-  onOpenModal,
-}: {
-  onOpenModal: () => void;
-}) {
+export default function HeroSection() {
   return (
     <section
       id="home"
@@ -19,12 +15,12 @@ export default function HeroSection({
         </p>
         <p className="mt-5 text-sm text-ink-muted">
           We are recruiting &mdash;{" "}
-          <button
-            onClick={onOpenModal}
+          <a
+            href="#join"
             className="text-brand-purple hover:underline font-medium"
           >
             Interested in joining? Get in touch.
-          </button>
+          </a>
         </p>
       </div>
     </section>

@@ -57,11 +57,11 @@ export default function TeamSection() {
                 </div>
               </div>
               <BioExpand bio={member.bio} className="mb-3" />
-              <div className="flex flex-wrap gap-1 mt-auto">
+              <div className="flex flex-wrap gap-1.5 mt-auto">
                 {member.interests.map((interest) => (
                   <span
                     key={interest}
-                    className="text-[11px] px-2 py-0.5 rounded-full bg-surface-subtle border border-surface-border text-ink-faint"
+                    className="text-[11px] px-2.5 py-0.5 rounded-full bg-surface border border-surface-border text-ink-muted"
                   >
                     {interest}
                   </span>

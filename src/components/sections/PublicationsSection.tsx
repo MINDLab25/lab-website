@@ -3,7 +3,11 @@ import SectionHeading from '@/components/SectionHeading'
 import CiteButton from '@/components/CiteButton'
 import { pubTypeBadgeClass, pubTypeLabel } from '@/lib/constants'
 
-const sortedPubs = [...publications].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
+const sortedPubs = [...publications].sort((a, b) => {
+  if (a.type === 'preprint' && b.type !== 'preprint') return -1
+  if (b.type === 'preprint' && a.type !== 'preprint') return 1
+  return b.year - a.year || a.title.localeCompare(b.title)
+})
 
 export default function PublicationsSection({
   expandedId,
@@ -20,7 +24,7 @@ export default function PublicationsSection({
           {sortedPubs.map((pub) => {
             const isExpanded = expandedId === pub.id
             return (
-              <article key={pub.id} className="py-5 group">
+              <article key={pub.id} id={pub.id} className="py-5 group scroll-mt-24">
                 <div className="flex gap-4">
                   <div className="hidden sm:block w-0.5 shrink-0 rounded-full bg-gradient-to-b from-brand-purple via-brand-pink to-brand-orange opacity-20 group-hover:opacity-70 transition-opacity" />
                   <div className="flex-1 min-w-0">

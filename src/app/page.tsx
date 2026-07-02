@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import HeroSection from '@/components/sections/HeroSection'
 import NewsSection from '@/components/sections/NewsSection'
 import ResearchSection from '@/components/sections/ResearchSection'
@@ -14,15 +14,9 @@ export default function Page() {
   const [newsExpanded, setNewsExpanded] = useState(false)
   const [joinModalOpen, setJoinModalOpen] = useState(false)
 
-  useEffect(() => {
-    const open = () => setJoinModalOpen(true)
-    window.addEventListener('open-join-modal', open)
-    return () => window.removeEventListener('open-join-modal', open)
-  }, [])
-
   return (
     <>
-      <HeroSection onOpenModal={() => setJoinModalOpen(true)} />
+      <HeroSection />
       <NewsSection
         expanded={newsExpanded}
         onToggle={() => setNewsExpanded((v) => !v)}

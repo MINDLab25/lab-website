@@ -64,7 +64,7 @@ export const researchAreas = [
     description:
       "AI, especially generative AI, is increasingly used by millions to billions of people and is shaping high-stakes decisions, making trust and safety central concerns. We develop methods to evaluate these systems and make them more factually accurate, explainable, accountable, robust to manipulation, aligned with human values, and less biased or harmful across groups.",
     icon: "🛡️",
-    memberIds: ["anh-bui"],
+    memberIds: ["xinyi-zhou", "anh-bui"],
   },
   {
     id: "human-ai-collaboration",
@@ -72,7 +72,7 @@ export const researchAreas = [
     description:
       "Human and artificial intelligence are complementary, each offering distinct strengths. We study these differences and develop tools and systems that enable humans and AI to work together synergistically.",
     icon: "🤝",
-    memberIds: ["benjamin-lee-peterson", "prabal-shrestha"],
+    memberIds: ["xinyi-zhou", "benjamin-lee-peterson", "prabal-shrestha"],
   },
   {
     id: "multimodality",
@@ -80,7 +80,7 @@ export const researchAreas = [
     description:
       "The web and the world are multimodal, spanning interconnected text, images, audio, and video. We extract actionable insights from these data, develop methods to learn from both content and relationships within and across modalities, and augment foundation models through effective multimodal retrieval.",
     icon: "🌐",
-    memberIds: ["prabal-shrestha"],
+    memberIds: ["xinyi-zhou", "prabal-shrestha"],
   },
   {
     id: "future-of-work-health-education",
@@ -88,7 +88,7 @@ export const researchAreas = [
     description:
       "We develop use-inspired AI for high-stakes domains, with a special focus on improving workplaces, healthcare, and education.",
     icon: "🎯",
-    memberIds: ["stephanie-grim", "benjamin-lee-peterson"],
+    memberIds: ["xinyi-zhou", "stephanie-grim", "benjamin-lee-peterson"],
   },
 ];
 
@@ -140,13 +140,18 @@ export const team: TeamMember[] = [
     name: "Xinyi Zhou",
     role: "pi",
     title: "Assistant Professor",
-    photo: "xinyi_zhou.jpg",
+    photo: "xinyi_zhou.png",
     bio: "Xinyi Zhou is an Assistant Professor of Computer Science at Boise State University, where she directs the MIND Lab. She was previously a postdoctoral scholar at the University of Washington and earned her PhD from Syracuse University. Her research spans machine learning, data mining, and human-centered AI, with work published in leading venues, featured in the media, and cited 6,000+ times. She has collaborated broadly across academia and industry to drive real-world impact and has been recognized as an MIT EECS Rising Star and a UCSD/UChicago/Stanford Rising Star in Data Science.",
-    // PI is involved across all research areas, so no per-area interest tags.
-    interests: [],
+    interests: [
+      "Trust and Safety",
+      "Human–AI Collaboration",
+      "Multimodality",
+      "Future of Work, Health, and Education",
+    ],
     links: {
       email: "xinyizhou@boisestate.edu",
       website: "https://xinyizhou.xyz",
+      linkedin: "https://www.linkedin.com/in/xyzhou59/",
       googleScholar: "https://scholar.google.com/citations?user=9U_Ge4MAAAAJ",
     },
     joinYear: 2025,
@@ -335,6 +340,72 @@ export const publications: Publication[] = [
 }`,
     featured: true,
   },
+  {
+    id: "llm-conspiracy-theories-social-impact-2026",
+    title:
+      "Can Large Language Models Assess the Social Impact of Conspiracy Theories?",
+    authors: [
+      "Bohan Jiang",
+      "Dawei Li",
+      "Zhen Tan",
+      "Xinyi Zhou",
+      "Ashwin Rao",
+      "Kristina Lerman",
+      "H. Russell Bernard",
+      "Huan Liu",
+    ],
+    venue:
+      "Proceedings of the International AAAI Conference on Web and Social Media (ICWSM)",
+    year: 2026,
+    type: "conference",
+    abstract:
+      "The research investigates whether LLMs can reliably assess conspiracy theories' societal consequences. Initial testing showed that unmodified prompts produced inaccurate evaluations due to two critical issues: LLMs retrieve relevant information effectively but struggle with detailed analysis and comparisons; their assessments shift based on how content is framed, creating predictable distortions. Drawing from established research methodologies, the team developed specialized techniques enabling LLMs to replicate human-level assessment quality. Testing multiple advanced language models against human survey responses and social media data demonstrated that an impact assessment framework employing multi-step analysis and comparisons to investigate diverse CT-related information can deliver more reliable results.",
+    links: {
+      pdf: "https://ojs.aaai.org/index.php/ICWSM/article/view/42685/50245",
+    },
+    bibtex: `@article{jiang2026conspiracy,
+      title={Can Large Language Models Assess the Social Impact of Conspiracy Theories?},
+      author={Jiang, Bohan and Li, Dawei and Tan, Zhen and Zhou, Xinyi and Rao, Ashwin and Lerman, Kristina and Bernard, H. Russell and Liu, Huan},
+      journal={Proceedings of the International AAAI Conference on Web and Social Media},
+      volume={20},
+      number={1},
+      year={2026},
+      doi={10.1609/icwsm.v20i1.42685},
+      url={https://doi.org/10.1609/icwsm.v20i1.42685},
+}`,
+    featured: true,
+  },
+  {
+    id: "chatgpt-prompting-strategies-2026",
+    title:
+      "Users' prompting strategies and ChatGPT's contextual adaptation shape conversational information-seeking experiences",
+    authors: [
+      "Haoning Xue",
+      "Yoo Jung Oh",
+      "Xinyi Zhou",
+      "Xinyu Zhang",
+      "Berit Oxley",
+    ],
+    venue: "Scientific Reports",
+    year: 2026,
+    type: "journal",
+    abstract:
+      "This study examines how people use ChatGPT for information-seeking across controversial and non-controversial topics in health, science, and policy domains. Analyzing 937 nationally representative U.S. participants, researchers found that only 19.1% of users employed prompting strategies, with more educated and Democratic-leaning individuals showing higher adoption rates. The research reveals ChatGPT demonstrates adaptive communication—responses to controversial issues contain greater cognitive complexity and external citations than non-controversial ones. Notably, while cognitively complex responses reduced user favorability ratings, they paradoxically strengthened issue-specific attitude shifts, suggesting sophisticated implicit persuasive effects despite explicit user preferences for simpler language.",
+    links: {
+      pdf: "https://www.nature.com/articles/s41598-026-42465-4.pdf",
+    },
+    bibtex: `@article{xue2026chatgpt,
+      title={Users' prompting strategies and ChatGPT's contextual adaptation shape conversational information-seeking experiences},
+      author={Xue, Haoning and Oh, Yoo Jung and Zhou, Xinyi and Zhang, Xinyu and Oxley, Berit},
+      journal={Scientific Reports},
+      volume={16},
+      year={2026},
+      pages={12112},
+      doi={10.1038/s41598-026-42465-4},
+      url={https://doi.org/10.1038/s41598-026-42465-4},
+}`,
+    featured: true,
+  },
 
   // ── 2024 ────────────────────────────────────────────────
   {
@@ -397,8 +468,8 @@ export const news: NewsItem[] = [
     type: "event",
     title: "Xinyi Presented at SocialLLM @ ICWSM 2026",
     description:
-      'Xinyi presented "Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation" at the Large Language Models for Social Reasoning and Simulation Workshop at ICWSM 2026 in Los Angeles, CA. Check out our paper, slides, and poster!',
-    link: "https://arxiv.org/abs/2606.07541",
+      'Xinyi presented "Multimodal Large Language Models as Synthetic Participants in Video-Based Studies: An Evaluation" at the Large Language Models for Social Reasoning and Simulation Workshop at ICWSM 2026 in Los Angeles, CA. Check out our paper, slides, and poster. The data and code have also been released.',
+    link: "/#multimodal-llms-synthetic-participants-2026",
   },
   {
     id: "xinyi-ai-institute-2026",
