@@ -20,7 +20,7 @@ export const lab = {
     "We welcome self-motivated doctoral, master's, and undergraduate students who are passionate about AI, data science, and human-centered computing.",
     "Please briefly tell us about yourself, your interests, and how your background aligns with our work, and send us your transcript and CV/resume.",
   ],
-  email: "mindlab20250820@gmail.com",
+  email: "xinyizhou@boisestate.edu",
   phone: "(208) 426-5766",
   address: "Boise, ID 83702",
   room: "City Center Plaza (CCP) 255, 777 W Main St",
@@ -29,7 +29,7 @@ export const lab = {
   linkedin: "https://www.linkedin.com", // TODO: add lab LinkedIn URL
   googleScholar: "",
   joinLink:
-    "https://mail.google.com/mail/?view=cm&to=mindlab20250820@gmail.com&su=Prospective%20Student%20Inquiry",
+    "https://mail.google.com/mail/?view=cm&to=xinyizhou@boisestate.edu&su=Prospective%20Student%20Inquiry",
 };
 
 // ──────────────────────────────────────────────────────────
