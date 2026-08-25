@@ -179,7 +179,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
       googleScholar:
         "https://scholar.google.com/citations?user=fWvBixgAAAAJ&hl=en",
     },
-    joinYear: 2025,
+    joinYear: 2026,
   },
   {
     id: "stephanie-grim",
@@ -196,7 +196,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
       googleScholar:
         "https://scholar.google.com/citations?user=Oc7FM-4AAAAJ&hl=en",
     },
-    joinYear: undefined,
+    joinYear: 2026,
   },
 
   // ── MS Students ─────────────────────────────────────────
@@ -214,7 +214,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
       linkedin: "https://www.linkedin.com/in/anh-bui-b527b211b/",
       github: "https://github.com/AnhBui1108",
     },
-    joinYear: undefined,
+    joinYear: 2026,
   },
   {
     id: "prabal-shrestha",
@@ -231,7 +231,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
       googleScholar:
         "https://scholar.google.com/citations?user=a5BsiBIAAAAJ&hl=en",
     },
-    joinYear: 2025,
+    joinYear: 2026,
   },
 
   // ── Undergraduate Researchers ───────────────────────────
@@ -454,6 +454,22 @@ export interface NewsItem {
 }
 
 export const news: NewsItem[] = [
+  {
+    id: "xinyi-idaho-ai-combine-2026",
+    date: "2026-08-01",
+    type: "misc",
+    title: "Xinyi Joins Idaho AI Combine as Faculty Fellow",
+    description:
+      "Xinyi was appointed a faculty fellow for the Idaho AI Combine, a university–industry partnership that supports AI startup development and strengthens Idaho's AI economy.",
+  },
+  {
+    id: "mind-lab-website-live-2026",
+    date: "2026-07-01",
+    type: "misc",
+    title: "MIND Lab Website is Live",
+    description:
+      "Credits to Prabal for leading this effort and to everyone else in the lab for feedback.",
+  },
   {
     id: "transform-seed-grant-2026",
     date: "2026-06-17",
