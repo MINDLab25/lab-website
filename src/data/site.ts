@@ -455,6 +455,14 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "welcome-stephanie-2026",
+    date: "2026-08-25",
+    type: "misc",
+    title: "Welcome Stephanie to the Lab",
+    description:
+      "Excited to welcome Stephanie Grim as the lab's second PhD student!",
+  },
+  {
     id: "xinyi-idaho-ai-combine-2026",
     date: "2026-08-01",
     type: "misc",
