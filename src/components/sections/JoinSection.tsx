@@ -39,6 +39,9 @@ export default function JoinSection() {
 
         <p className="mt-10 text-xs text-ink-faint">
           &copy; {new Date().getFullYear()} MIND Lab
+          {process.env.NEXT_PUBLIC_BUILD_DATE && (
+            <> &middot; Last updated {process.env.NEXT_PUBLIC_BUILD_DATE}</>
+          )}
         </p>
       </div>
     </section>

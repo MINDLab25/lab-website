@@ -35,6 +35,8 @@ There are no tests. The build output is a fully static site in `out/` (Next.js `
 
 **Join flow:** Nav "Join Us" and the Hero inline link are plain `#join` anchors that scroll to `JoinSection`. Its "Email Us" button links directly to `lab.joinLink`, a Gmail compose URL (not `mailto:`), for reliable cross-browser behavior. There is no modal.
 
+**Last updated date:** `next.config.mjs` stamps the build date (Boise time, pre-formatted) into `NEXT_PUBLIC_BUILD_DATE`; `JoinSection` shows it next to the copyright line on the home page. It updates on every deploy — there is nothing to edit by hand.
+
 **Design tokens:** Custom colors and typography are defined in `tailwind.config.ts` under `brand.*`, `ink.*`, and `surface.*`. Reusable utility classes (`.badge`, `.badge-*`, `.container-content`, `.gradient-text`) are defined in `src/app/globals.css` under `@layer utilities`.
 
 **Cross-linking via IDs:** `researchAreas[].memberIds` references `team[].id`. `home.featuredPublicationIds` and `home.featuredNewsIds` reference IDs in `publications` and `news`. Broken IDs fail silently (filtered out with `.filter(Boolean)`).
