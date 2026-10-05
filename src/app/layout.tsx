@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     'fact-checking',
   ],
   twitter: { card: 'summary' },
+  verification: { google: 'GWBdkWIzWY8hvcU4XoR6BjvCkbW0LWwh0TvKCKB7tRA' },
 }
 
 const jsonLd = {
