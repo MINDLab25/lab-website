@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { lab } from '@/data/site'
 
-export const siteTitle = `${lab.name} | Machine Intelligence and Data Lab at ${lab.university}`
-export const titleSuffix = `${lab.name} at ${lab.university}`
+export const siteTitle = `${lab.fullName} | ${lab.university}`
+export const titleSuffix = `${lab.name}, ${lab.university}`
 
 const ogImage = '/images/mindlab-logo-horizontal.png'
 
