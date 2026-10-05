@@ -15,7 +15,7 @@ export const lab = {
   college: "College of Engineering",
   tagline: "Trustworthy AI Systems for the Real World",
   description:
-    "Hello! This is Machine Intelligence and Data Lab (MIND Lab) in the Computer Science Department at Boise State University. Our research centers on machine learning and foundation models with and for real-world social impact, integrating data and human-centric methods to pursue intelligent futures where people and AI co-thrive.",
+    "Hello! This is the Machine Intelligence and Data Lab (MIND Lab) in the Computer Science Department at Boise State University. Our research centers on AI for social impact, integrating data- and human-centric methods to pursue intelligent futures for people.",
   joinDescription: [
     "We welcome self-motivated doctoral, master's, and undergraduate students who are passionate about AI, data science, and human-centered computing.",
     "Please briefly tell us about yourself, your interests, and how your background aligns with our work, and send us your transcript and CV/resume.",
@@ -191,7 +191,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
     bio: 'Stephanie joins the lab as an incoming PhD student starting in Fall 2026 with over a decade of experience in human subjects and healthcare research. She has worked closely with patients, clinicians, and research teams, seeing firsthand how health technologies are used in practice. She hopes to draw on this experience in her work on machine learning and human-centered AI, particularly in understanding how tools such as large language models can be developed and implemented in ways that support patients, clinicians, and health systems. She is excited about combining rigorous yet responsible research methods with practical healthcare needs. Outside of research, Stephanie is an avid outdoorsperson who spends much of her free time snowboarding, trail running, and mountain biking. She also loves animals and frequently fosters rescue puppies while they wait for their "furever" homes. ',
     interests: ["Future of Work, Health, and Education"],
     links: {
-      email: "stephgrim@gmail.com",
+      email: "stephaniegrim@u.boisestate.edu",
       linkedin: "https://www.linkedin.com/in/stephanie-grim-01841a111/",
       googleScholar:
         "https://scholar.google.com/citations?user=Oc7FM-4AAAAJ&hl=en",
