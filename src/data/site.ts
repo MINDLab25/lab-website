@@ -14,6 +14,11 @@ export const lab = {
   department: "Department of Computer Science",
   college: "College of Engineering",
   tagline: "Trustworthy AI Systems for the Real World",
+  /** Public site address, no trailing slash — change this if the site moves to a custom domain */
+  url: "https://mindlab25.github.io/lab-website",
+  /** Short summary shown in Google results and link previews (aim for ~155 characters) */
+  seoDescription:
+    "The Machine Intelligence and Data (MIND) Lab at Boise State University researches trustworthy AI, human–AI collaboration, and multimodal LLMs, led by Dr. Xinyi Zhou.",
   description:
     "Hello! This is the Machine Intelligence and Data Lab (MIND Lab) in the Computer Science Department at Boise State University. Our research centers on AI for social impact, integrating data- and human-centric methods to pursue intelligent futures for people.",
   joinDescription: [
@@ -25,8 +30,8 @@ export const lab = {
   address: "Boise, ID 83702",
   room: "City Center Plaza (CCP) 255, 777 W Main St",
   github: "https://github.com/MINDLab25",
-  twitter: "https://twitter.com/",
-  linkedin: "https://www.linkedin.com", // TODO: add lab LinkedIn URL
+  twitter: "", // TODO: add lab Twitter/X URL
+  linkedin: "", // TODO: add lab LinkedIn URL
   googleScholar: "",
   joinLink:
     "https://mail.google.com/mail/?view=cm&to=xinyizhou@boisestate.edu&su=Prospective%20Student%20Inquiry",
@@ -127,7 +132,7 @@ export interface TeamMember {
   };
   /** Year they joined the lab */
   joinYear?: number;
-  /** Alumni only: year they graduated */
+  /** Alumni only: year they graduated or left the lab */
   gradYear?: number;
   /** Alumni only: where they are now */
   currentPosition?: string;
@@ -202,21 +207,6 @@ Ben's work connects research, teaching, and service around a common thread: how 
   // ── MS Students ─────────────────────────────────────────
   // TODO: replace with real lab members
   {
-    id: "anh-bui",
-    name: "Anh Bui",
-    role: "ms",
-    title: "Summer Intern",
-    photo: "anh_bui.jpg",
-    bio: "Anh is an MSCS student at Boise State University, working on trustworthy and reliable AI. Her current research centers on memory in agentic AI: how it shapes AI safety in real-world scenarios, why those effects arise, and how we could build memory systems that not only improve performance but also keep agents safe. In her spare time, she enjoys climbing and bouldering - and is still learning how to trust her feet.",
-    interests: ["Trust and Safety"],
-    links: {
-      email: "buianh1108@gmail.com",
-      linkedin: "https://www.linkedin.com/in/anh-bui-b527b211b/",
-      github: "https://github.com/AnhBui1108",
-    },
-    joinYear: 2026,
-  },
-  {
     id: "prabal-shrestha",
     name: "Prabal Shrestha",
     role: "ms",
@@ -268,6 +258,25 @@ Ben's work connects research, teaching, and service around a common thread: how 
     bio: "Pumpkin is a six-year-old British Shorthair who believes dogs are bad and curiosity didn't kill the cat.",
     interests: [],
     links: {},
+  },
+
+  // ── Alumni ──────────────────────────────────────────────
+  {
+    id: "anh-bui",
+    name: "Anh Bui",
+    role: "alumni",
+    title: "Summer Intern",
+    photo: "anh_bui.jpg",
+    bio: "Anh is an MSCS student at Boise State University, working on trustworthy and reliable AI. Her current research centers on memory in agentic AI: how it shapes AI safety in real-world scenarios, why those effects arise, and how we could build memory systems that not only improve performance but also keep agents safe. In her spare time, she enjoys climbing and bouldering - and is still learning how to trust her feet.",
+    interests: ["Trust and Safety"],
+    links: {
+      email: "buianh1108@gmail.com",
+      linkedin: "https://www.linkedin.com/in/anh-bui-b527b211b/",
+      github: "https://github.com/AnhBui1108",
+    },
+    joinYear: 2026,
+    gradYear: 2026,
+    currentPosition: "MSCS Student, Boise State University",
   },
 ];
 

@@ -5,7 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 const sizeClass = {
   lg: 'w-20 h-20 text-xl',
   md: 'w-16 h-16 text-base',
-  sm: 'w-8 h-8 text-xs',
+  sm: 'w-12 h-12 text-sm',
 }
 
 export default function Avatar({

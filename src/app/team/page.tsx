@@ -3,6 +3,37 @@ import type { TeamMember } from "@/data/site";
 import Avatar from "@/components/Avatar";
 import SocialLinks from "@/components/SocialLinks";
 import BioExpand from "@/components/BioExpand";
+import AlumniList from "@/components/AlumniList";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata(
+  "/team/",
+  `Meet the faculty, students, and alumni of the ${lab.fullName} at ${lab.university}.`,
+  "Team",
+);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": team
+    .filter((m) => m.role !== "mascot")
+    .map((m) => ({
+      "@type": "Person",
+      name: m.name,
+      jobTitle: m.title,
+      ...(m.photo && { image: `${lab.url}/images/team/${m.photo}` }),
+      ...(m.role === "alumni"
+        ? { alumniOf: { "@id": `${lab.url}/#lab` } }
+        : { memberOf: { "@id": `${lab.url}/#lab` } }),
+      sameAs: [
+        m.links.website,
+        m.links.github,
+        m.links.twitter,
+        m.links.googleScholar,
+        m.links.linkedin,
+      ].filter(Boolean),
+    })),
+};
 
 export default function TeamPage() {
   const pi = team.find((m) => m.role === "pi")!;
@@ -15,6 +46,7 @@ export default function TeamPage() {
 
   return (
     <div className="container-content py-14 md:py-20">
+      <JsonLd data={jsonLd} />
       {/* Header */}
       <div className="mb-12">
         <h1 className="text-3xl font-semibold mb-2">Team</h1>
@@ -76,41 +108,7 @@ export default function TeamPage() {
           <h2 className="text-xs font-semibold uppercase tracking-widest text-ink-faint mb-6">
             Alumni
           </h2>
-          <div className="divide-y divide-surface-border border border-surface-border rounded-xl overflow-hidden bg-surface">
-            {alumni.map((member) => (
-              <div
-                key={member.id}
-                className="flex items-center gap-4 px-5 py-4"
-              >
-                <Avatar
-                  name={member.name}
-                  photo={member.photo || undefined}
-                  size="sm"
-                />
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                    <span className="font-medium text-sm text-ink">
-                      {member.name}
-                    </span>
-                    {member.gradYear && (
-                      <span className="text-xs text-ink-faint">
-                        · {member.title} &rsquo;
-                        {String(member.gradYear).slice(-2)}
-                      </span>
-                    )}
-                  </div>
-                  {member.currentPosition && (
-                    <p className="text-xs text-ink-muted mt-0.5">
-                      {member.currentPosition}
-                    </p>
-                  )}
-                </div>
-                <div className="shrink-0">
-                  <SocialLinks links={member.links} />
-                </div>
-              </div>
-            ))}
-          </div>
+          <AlumniList />
         </section>
       )}
     </div>

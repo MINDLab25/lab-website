@@ -3,10 +3,12 @@ import SectionHeading from '@/components/SectionHeading'
 import Avatar from '@/components/Avatar'
 import SocialLinks from '@/components/SocialLinks'
 import BioExpand from '@/components/BioExpand'
+import AlumniList from '@/components/AlumniList'
 
 const currentMembers = team.filter((m) => m.role !== 'alumni')
 const pi = currentMembers.find((m) => m.role === 'pi')!
 const members = currentMembers.filter((m) => m.role !== 'pi')
+const hasAlumni = team.some((m) => m.role === 'alumni')
 
 export default function TeamSection() {
   return (
@@ -73,6 +75,16 @@ export default function TeamSection() {
             </div>
           ))}
         </div>
+
+        {/* Alumni */}
+        {hasAlumni && (
+          <div className="mt-10">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-ink-faint mb-4">
+              Alumni
+            </h3>
+            <AlumniList />
+          </div>
+        )}
       </div>
     </section>
   )

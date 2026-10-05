@@ -2,17 +2,64 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import Nav from '@/components/Nav'
+import JsonLd from '@/components/JsonLd'
 import { lab } from '@/data/site'
+import { pageMetadata, siteTitle, titleSuffix } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: lab.name,
-  description: lab.description,
-  keywords: ['machine learning', 'data science', 'trustworthy AI', 'LLMs', 'fact-checking'],
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    siteName: lab.name,
-  },
+  ...pageMetadata('/', lab.seoDescription),
+  metadataBase: new URL(`${lab.url}/`),
+  title: { default: siteTitle, template: `%s | ${titleSuffix}` },
+  keywords: [
+    lab.name,
+    lab.fullName,
+    lab.university,
+    'Xinyi Zhou',
+    'trustworthy AI',
+    'human-AI collaboration',
+    'multimodal LLMs',
+    'machine learning',
+    'data science',
+    'fact-checking',
+  ],
+  twitter: { card: 'summary' },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ResearchOrganization',
+      '@id': `${lab.url}/#lab`,
+      name: lab.fullName,
+      alternateName: [lab.name, 'MINDLab'],
+      url: `${lab.url}/`,
+      logo: `${lab.url}/images/mindlab-logo-symbol.png`,
+      description: lab.seoDescription,
+      email: lab.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: lab.room,
+        addressLocality: 'Boise',
+        addressRegion: 'ID',
+        postalCode: '83702',
+        addressCountry: 'US',
+      },
+      parentOrganization: {
+        '@type': 'CollegeOrUniversity',
+        name: lab.university,
+        url: 'https://www.boisestate.edu/',
+      },
+      sameAs: [lab.github, lab.twitter, lab.linkedin, lab.googleScholar].filter(Boolean),
+    },
+    {
+      '@type': 'WebSite',
+      name: lab.name,
+      alternateName: lab.fullName,
+      url: `${lab.url}/`,
+      publisher: { '@id': `${lab.url}/#lab` },
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -28,6 +75,7 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
           }}
         />
+        <JsonLd data={jsonLd} />
       </head>
       <body className="min-h-screen flex flex-col">
         <Nav />
