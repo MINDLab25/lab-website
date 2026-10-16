@@ -276,7 +276,7 @@ Ben's work connects research, teaching, and service around a common thread: how 
     },
     joinYear: 2026,
     gradYear: 2026,
-    currentPosition: "MSCS Student, Boise State University",
+    currentPosition: "Summer Intern",
   },
 ];
 
