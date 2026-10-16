@@ -155,7 +155,7 @@ export default function PublicationsPage() {
     return publications
       .filter((p) => yearFilter === 'all' || p.year === yearFilter)
       .filter((p) => typeFilter === 'all' || p.type === typeFilter)
-      .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
+      .sort((a, b) => b.year - a.year) // stable sort: same-year papers keep their site.ts order
   }, [yearFilter, typeFilter])
 
   // Preprints ignore the year/date and are pinned above the year-grouped

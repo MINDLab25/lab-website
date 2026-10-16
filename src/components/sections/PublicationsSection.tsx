@@ -6,7 +6,7 @@ import { pubTypeBadgeClass, pubTypeLabel } from '@/lib/constants'
 const sortedPubs = [...publications].sort((a, b) => {
   if (a.type === 'preprint' && b.type !== 'preprint') return -1
   if (b.type === 'preprint' && a.type !== 'preprint') return 1
-  return b.year - a.year || a.title.localeCompare(b.title)
+  return b.year - a.year // stable sort: same-year papers keep their site.ts order
 })
 
 export default function PublicationsSection({

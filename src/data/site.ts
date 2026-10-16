@@ -20,7 +20,7 @@ export const lab = {
   seoDescription:
     "The Machine Intelligence and Data (MIND) Lab at Boise State University researches trustworthy AI, human–AI collaboration, and multimodal LLMs, led by Dr. Xinyi Zhou.",
   description:
-    "Hello! This is the Machine Intelligence and Data Lab (MIND Lab) in the Computer Science Department at Boise State University. Our research centers on AI for social impact, integrating data- and human-centric methods to pursue intelligent futures for people.",
+    "Hello! This is the Machine Intelligence and Data Lab (MIND Lab) in the Computer Science Department at Boise State University. Our research centers on machine learning and foundation models for social impact, integrating data- and human-centric methods to pursue intelligent futures for people.",
   joinDescription: [
     "We welcome self-motivated doctoral, master's, and undergraduate students who are passionate about AI, data science, and human-centered computing.",
     "Please briefly tell us about yourself, your interests, and how your background aligns with our work, and send us your transcript and CV/resume.",
@@ -420,7 +420,7 @@ export const publications: Publication[] = [
   {
     id: "correcting-misinformation-llm-2024",
     title:
-      "Correcting misinformation on social media with a large language model",
+      "Customized large language models can outperform Community Notes in correcting misinformation",
     authors: ["Xinyi Zhou", "Ashish Sharma", "Amy X Zhang", "Tim Althoff"],
     venue: "arXiv preprint",
     year: 2024,

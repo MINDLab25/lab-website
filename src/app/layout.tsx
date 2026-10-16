@@ -9,7 +9,8 @@ import { pageMetadata, siteTitle, titleSuffix } from '@/lib/seo'
 export const metadata: Metadata = {
   ...pageMetadata('/', lab.seoDescription),
   metadataBase: new URL(`${lab.url}/`),
-  title: { default: siteTitle, template: `%s | ${titleSuffix}` },
+  // Browser tab shows the short name; link previews keep the full `siteTitle`.
+  title: { default: lab.name, template: `%s | ${titleSuffix}` },
   keywords: [
     lab.name,
     lab.fullName,

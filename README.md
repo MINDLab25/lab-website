@@ -8,7 +8,7 @@ Built with [Next.js 14](https://nextjs.org) and [Tailwind CSS](https://tailwindc
 
 ## Editing Content
 
-**All site content lives in one file: `src/data/site.ts`**
+**All site content lives in one file:** `src/data/site.ts`
 
 Open that file in any text editor. You'll find clearly labelled sections for every part of the site. No coding knowledge needed — just edit the text between the quotes.
 
@@ -22,10 +22,10 @@ export const lab = {
   email: "mindlab20250820@gmail.com",
   github: "https://github.com/MINDLab25",
   twitter: "https://twitter.com/mindlab_bsu",
-  linkedin: "",   // add lab LinkedIn URL here
+  linkedin: "", // add lab LinkedIn URL here
   joinLink: "https://mail.google.com/mail/?view=cm&to=...",
   // ...
-}
+};
 ```
 
 ### Adding a news item
@@ -125,9 +125,10 @@ Find the `resources` array:
 2. Name it `firstname-lastname.jpg` (all lowercase, hyphen-separated).
 3. Drop it into `public/images/team/`.
 4. In `src/data/site.ts`, set the member's `photo` field to the filename:
-   ```ts
-   photo: "firstname-lastname.jpg",
-   ```
+
+```ts
+ photo: "firstname-lastname.jpg",
+```
 
 If `photo` is left as `""`, the site shows a gradient avatar with the person's initials instead.
 
